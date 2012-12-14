@@ -105,7 +105,7 @@ g2d_used = 1
 g2d_size = 0x1000000
 
 [emac_para]
-emac_used = 1
+emac_used = 0
 emac_rxd3 = port:PA00<2><default><default><default>
 emac_rxd2 = port:PA01<2><default><default><default>
 emac_rxd1 = port:PA02<2><default><default><default>
@@ -622,7 +622,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en = ""
 
 [mmc0_para]
