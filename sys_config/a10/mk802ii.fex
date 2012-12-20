@@ -79,7 +79,7 @@ dram_baseaddr = 0x40000000
 dram_clk = 408
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 2048
+dram_chip_density = 4096
 dram_io_width = 16
 dram_bus_width = 32
 dram_cas = 6
@@ -92,7 +92,7 @@ dram_tpr2 = 0x1a0c8
 dram_tpr3 = 0x0
 dram_tpr4 = 0x0
 dram_tpr5 = 0x0
-dram_emr1 = 0x04
+dram_emr1 = 0x4
 dram_emr2 = 0x0
 dram_emr3 = 0x0
 
@@ -256,7 +256,7 @@ full_duplex = 0
 manual_cs = 0
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -640,7 +640,7 @@ sdc_use_wp = 0
 sdc_wp = ""
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 bus_width = 4
 sdc_cmd = port:PH22<5><1><2><default>
@@ -768,7 +768,7 @@ release = 100
 luns = 2
 
 [gsensor_para]
-gsensor_used = 1
+gsensor_used = 0
 gsensor_name = "gsenser"
 gsensor_twi_id = 1
 gsensor_twi_addr = 0x18
