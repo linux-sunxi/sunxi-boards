@@ -105,7 +105,7 @@ g2d_used = 1
 g2d_size = 0x1000000
 
 [emac_para]
-emac_used = 1
+emac_used = 0
 emac_rxd3 = port:PA00<2><default><default><default>
 emac_rxd2 = port:PA01<2><default><default><default>
 emac_rxd1 = port:PA02<2><default><default><default>
@@ -124,7 +124,6 @@ emac_txclk = port:PA14<2><default><default><default>
 emac_crs = port:PA15<2><default><default><default>
 emac_col = port:PA16<2><default><default><default>
 emac_reset = port:PA17<1><default><default><default>
-emac_power =
 
 [twi0_para]
 twi0_used = 1
@@ -257,7 +256,7 @@ full_duplex = 0
 manual_cs = 0
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -277,6 +276,7 @@ ctp_revert_y_flag = 0
 ctp_exchange_x_y_flag = 0
 ctp_int_port = port:PH21<6><default><default><default>
 ctp_wakeup = port:PB13<1><default><default><1>
+ctp_reset = port:PB13<1><default><default><1>
 ctp_io_port = port:PH21<0><default><default><default>
 
 [tkey_para]
@@ -346,8 +346,8 @@ lcd1_screen_hue = 50
 
 [lcd0_para]
 lcd_used = 1
-lcd_x = 800
-lcd_y = 480
+lcd_x = 1280
+lcd_y = 720
 lcd_dclk_freq = 33
 lcd_pwm_not_used = 0
 lcd_pwm_ch = 0
@@ -370,11 +370,11 @@ lcd_lvds_bitwidth = 0
 lcd_lvds_io_cross = 0
 lcd_cpu_if = 0
 lcd_frm = 0
-lcd_io_cfg0 = 268435456
+lcd_io_cfg0 = 0x10000000
 lcd_gamma_correction_en = 0
-lcd_gamma_tbl_0 = 0x0
-lcd_gamma_tbl_1 = 0x10101
-lcd_gamma_tbl_255 = 0xffffff
+lcd_gamma_tbl_0 = 0x00000000
+lcd_gamma_tbl_1 = 0x00010101
+lcd_gamma_tbl_255 = 0x00ffffff
 lcd_bl_en_used = 0
 lcd_bl_en = port:PH07<1><0><default><1>
 lcd_power_used = 1
@@ -442,9 +442,9 @@ lcd_cpu_if = 0
 lcd_frm = 0
 lcd_io_cfg0 = 0
 lcd_gamma_correction_en = 0
-lcd_gamma_tbl_0 = 0x0
-lcd_gamma_tbl_1 = 0x10101
-lcd_gamma_tbl_255 = 0xffffff
+lcd_gamma_tbl_0 = 0x00000000
+lcd_gamma_tbl_1 = 0x00010101
+lcd_gamma_tbl_255 = 0x00ffffff
 lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
@@ -622,7 +622,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
@@ -640,7 +640,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 bus_width = 4
 sdc_cmd = port:PH22<5><1><2><default>
@@ -733,7 +733,7 @@ usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
 usb_det_vbus_gpio = port:PH22<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_host_init_state = 0
+usb_host_init_state = 1
 
 [usbc1]
 usb_used = 1
@@ -751,12 +751,12 @@ usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
-usb_host_init_state = 0
+usb_host_init_state = 1
 
 [usb_feature]
-vendor_id = 6353
-mass_storage_id = 1
-adb_id = 2
+vendor_id = 0x18D1
+mass_storage_id = 0x0001
+adb_id = 0x0002
 manufacturer_name = "USB Developer"
 product_name = "Android"
 serial_number = "20080411"
@@ -768,7 +768,7 @@ release = 100
 luns = 2
 
 [gsensor_para]
-gsensor_used = 1
+gsensor_used = 0
 gsensor_name = "gsenser"
 gsensor_twi_id = 1
 gsensor_twi_addr = 0x18
@@ -811,20 +811,20 @@ usb_wifi_usbc_num = 2
 [gy_para]
 gy_used = 0
 gy_twi_id = 1
-gy_twi_addr = 0
+gy_twi_addr = 0x00
 gy_int1 = port:PH18<6><1><default><default>
 gy_int2 = port:PH19<6><1><default><default>
 
 [ls_para]
 ls_used = 0
 ls_twi_id = 1
-ls_twi_addr = 0
+ls_twi_addr = 0x00
 ls_int = port:PH20<6><1><default><default>
 
 [compass_para]
 compass_used = 0
 compass_twi_id = 1
-compass_twi_addr = 0
+compass_twi_addr = 0x00
 compass_int = port:PI13<6><1><default><default>
 
 [bt_para]
@@ -845,7 +845,7 @@ i2s_dout3 =
 i2s_din = port:PB12<2><1><default><default>
 
 [spdif_para]
-spdif_used = 1
+spdif_used = 0
 spdif_mclk =
 spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
@@ -860,12 +860,12 @@ audio_pa_ctrl = port:PH07<1><default><default><0>
 switch_used = 0
 
 [ir_para]
-ir_used = 1
+ir_used = 0
 ir0_rx = port:PB04<2><default><default><default>
 
 [pmu_para]
 pmu_used = 1
-pmu_twi_addr = 52
+pmu_twi_addr = 0x34
 pmu_twi_id = 0
 pmu_irq_id = 0
 pmu_battery_rdc = 100
@@ -901,7 +901,7 @@ pmu_bat_para16 = 100
 pmu_usbvol_limit = 1
 pmu_usbcur_limit = 0
 pmu_usbvol = 4000
-pmu_usbcur = 0
+pmu_usbcur = 900
 pmu_usbvol_pc = 4000
 pmu_usbcur_pc = 0
 pmu_pwroff_vol = 3300
@@ -935,6 +935,20 @@ gpio_pin_2 = port:PH20<1><default><default><1>
 gpio_pin_3 = port:PB03<0><default><default><default>
 gpio_pin_4 = port:PH19<1><default><default><1>
 
+[gl_para]
+gl_used = 1
+gl_num = 2
+gl_status0 = 0
+gl_reverse0 = 1
+gl_light_time0 = 100
+gl_black_time0 = 100
+gl_gpio0 = port:PH15<1><0><default><1>
+gl_status1 = 2
+gl_reverse1 = 0
+gl_light_time1 = 500
+gl_black_time1 = 500
+gl_gpio1 = port:PB02<1><0><default><1>
+
 [gpio_init]
 pin_1 = port:PH10<1><default><default><0>
 pin_2 = port:PH20<1><default><default><1>
@@ -942,8 +956,11 @@ pin_2 = port:PH20<1><default><default><1>
 [dynamic]
 MAC = "000000000000"
 
+[al_para]
+android_language = 0
+
 [system]
-recovery_key = port:PH16<0><1><default><default>
+recovery_key = port:PH16<0><1>
 
 [dvfs_table]
 max_freq = 1008000000
@@ -959,3 +976,8 @@ LV4_freq = 864000000
 LV4_volt = 1300
 LV5_freq = 624000000
 LV5_volt = 1250
+
+[boot_disp]
+output_type = 3
+output_mode = 5
+auto_hpd = 1
