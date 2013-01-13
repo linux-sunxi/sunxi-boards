@@ -58,7 +58,7 @@ uart_debug_tx = port:PB22<2><default><default><default>
 uart_debug_rx = port:PB23<2><default><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PF00<4><default><default><default>
 jtag_ck = port:PF01<4><default><default><default>
 jtag_do = port:PF03<4><default><default><default>
@@ -116,17 +116,17 @@ emac_col = port:PA16<2><default><default><default>
 emac_reset = port:PA17<1><default><default><default>
 
 [twi0_para]
-twi0_used = 1
+twi0_used = 0
 twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
@@ -306,7 +306,7 @@ fb1_pixel_sequence = 0
 fb1_scaler_mode_enable = 0
 
 [lcd0_para]
-lcd_used = 1
+lcd_used = 0
 lcd_x = 800
 lcd_y = 480
 lcd_dclk_freq = 33
@@ -628,7 +628,7 @@ sdc_wp =
 sdc_used = 0
 
 [mmc3_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PI04<2><1><2><default>
@@ -824,7 +824,7 @@ spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
 
 [audio_para]
-audio_used = 1
+audio_used = 0
 audio_pa_ctrl = port:PH15<1><default><default><0>
 
 [ir_para]
