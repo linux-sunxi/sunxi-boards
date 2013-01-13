@@ -830,7 +830,6 @@ audio_pa_ctrl = port:PH15<1><default><default><0>
 [ir_para]
 ir_used = 0
 ir0_rx = port:PB04<2><default><default><default>
-:pmu_irq_id             ---irq = 0
 
 [pmu_para]
 pmu_used = 0
