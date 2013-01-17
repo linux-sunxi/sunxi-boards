@@ -102,7 +102,7 @@ g2d_used = 1
 g2d_size = 0x1000000
 
 [emac_para]
-emac_used = 1
+emac_used = 0
 emac_rxd3 = port:PA00<2><default><default><default>
 emac_rxd2 = port:PA01<2><default><default><default>
 emac_rxd1 = port:PA02<2><default><default><default>
@@ -635,7 +635,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
@@ -653,7 +653,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 bus_width = 4
 sdc_cmd = port:PH22<5><1><2><default>
@@ -781,7 +781,7 @@ release = 100
 luns = 3
 
 [gsensor_para]
-gsensor_used = 1
+gsensor_used = 0
 gsensor_name = "dmard06"
 gsensor_twi_id = 1
 gsensor_twi_addr = 0x1c
@@ -872,12 +872,12 @@ ir_used = 1
 ir0_rx = port:PB04<2><default><default><default>
 
 [pmu_para]
-pmu_used = 1
+pmu_used = 0
 pmu_twi_addr = 52
 pmu_twi_id = 0
 pmu_irq_id = 0
-pmu_battery_rdc = 100
-pmu_battery_cap = 3200
+pmu_battery_rdc = 200
+pmu_battery_cap = 5000
 pmu_init_chgcur = 300
 pmu_earlysuspend_chgcur = 600
 pmu_suspend_chgcur = 1000
