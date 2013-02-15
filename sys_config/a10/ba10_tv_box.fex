@@ -57,7 +57,7 @@ uart_debug_tx = port:PF02<4><default><default><default>
 uart_debug_rx = port:PF04<4><default><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB14<3><default><default><default>
 jtag_ck = port:PB15<3><default><default><default>
 jtag_do = port:PB16<3><default><default><default>
@@ -121,12 +121,12 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
@@ -151,7 +151,7 @@ uart_dcd = port:PA16<4><1><default><default>
 uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used = 1
+uart_used = 0
 uart_port = 2
 uart_type = 4
 uart_tx = port:PI18<3><1><default><default>
@@ -481,7 +481,7 @@ dac2_src = 6
 dac3_src = 0
 
 [csi0_para]
-csi_used = 1
+csi_used = 0
 csi_mode = 0
 csi_dev_qty = 1
 csi_stby_mode = 0
@@ -611,7 +611,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
@@ -834,14 +834,14 @@ i2s_dout3 =
 i2s_din = port:PB12<2><1><default><default>
 
 [spdif_para]
-spdif_used = 1
+spdif_used = 0
 spdif_mclk =
 spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
 
 [audio_para]
 audio_used = 1
-capture_used = 1
+capture_used = 0
 audio_lr_change = 0
 audio_pa_ctrl = port:PH15<1><default><default><0>
 
