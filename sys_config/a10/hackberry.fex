@@ -835,7 +835,7 @@ i2s_dout3 =
 i2s_din = port:PB12<2><1><default><default>
 
 [spdif_para]
-spdif_used = 1
+spdif_used = 0
 spdif_mclk =
 spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
