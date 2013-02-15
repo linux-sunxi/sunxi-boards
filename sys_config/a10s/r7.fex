@@ -223,7 +223,7 @@ motor_shake = port:PA16<1><default><default><0>
 
 [disp_init]
 disp_init_enable = 1
-disp_mode = 4
+disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 5
 screen1_output_type = 1
