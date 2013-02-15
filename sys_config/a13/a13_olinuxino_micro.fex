@@ -143,7 +143,7 @@ spi_mosi = port:PB02<4><default><default><default>
 spi_miso = port:PB03<4><default><default><default>
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -262,7 +262,7 @@ lcdhsync = port:PD26<2><0><default><default>
 lcdvsync = port:PD27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 0
 
 [hdmi_para]
@@ -483,7 +483,7 @@ sdio_wifi_sdc_id = ""
 sdio_wifi_mod_sel = ""
 
 [usb_wifi_para]
-usb_wifi_used = 1
+usb_wifi_used = 0
 usb_wifi_usbc_num = 1
 
 [3g_para]
@@ -504,7 +504,7 @@ gy_int1 = ""
 gy_int2 = ""
 
 [ls_para]
-ls_used = 1
+ls_used = 0
 ls_name = "ltr501als"
 ls_twi_id = 1
 ls_twi_addr = ""
@@ -548,13 +548,13 @@ ir_used = 0
 ir0_rx = port:PB04<2><default><default><default>
 
 [rtc_para]
-rtc_used = 1
+rtc_used = 0
 rtc_name = "pcf8563"
 rtc_twi_id = 1
 rtc_twi_addr = 81
 
 [pmu_para]
-pmu_used = 1
+pmu_used = 0
 pmu_twi_addr = 52
 pmu_twi_id = 0
 pmu_irq_id = 0
