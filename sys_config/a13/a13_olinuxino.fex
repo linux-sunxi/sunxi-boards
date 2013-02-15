@@ -176,6 +176,20 @@ tkey_int =
 motor_used = 0
 motor_shake =
 
+;Note the VGA output on the a13_olinuxino is not using the regular
+;A1x VGA output logic, as the A13 does not have that instead olimex clevery
+;hooked up some logic to the lcd controller to give us a VGA output
+;
+;This means that:
+;1) screen0_output_type must be set to 1
+;2) screen0_output_mode does not do anything
+;
+;Basically the entire [disp_init] section should not be touched, instead the
+;lcd0_para section can be used to changed the vga-output resolution, note
+;that this for a different resultion you also need to change the front-portal,
+;back portal and total-lines settings (good old xf86 modelines stuff, but then
+;in a different format
+
 [disp_init]
 disp_init_enable = 1
 disp_mode = 0
