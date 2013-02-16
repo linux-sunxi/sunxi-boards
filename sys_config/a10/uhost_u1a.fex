@@ -977,3 +977,10 @@ LV5_volt = 1250
 android_language = 1
 firmware_versions = "404.000.10.120831"
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PB02<1><0><default><1>
+leds_name_1 = "blue:pb02:led1"
+leds_inverted_1 = 1
+leds_default_1 = 1
