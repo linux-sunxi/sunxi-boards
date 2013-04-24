@@ -698,3 +698,9 @@ auto_hpd = 1
 power_led_used = 1
 power_led_gpio = port:PB02<1><0><default><default>
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PB02<1><0><default><1>
+leds_name_1 = "green:pb02:led1"
+leds_default_1 = 1
