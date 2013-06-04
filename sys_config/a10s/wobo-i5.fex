@@ -138,7 +138,7 @@ twi1_scl = port:PB15<2><default><default><default>
 twi1_sda = port:PB16<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB17<2><default><default><default>
 twi2_sda = port:PB18<2><default><default><default>
 
@@ -150,7 +150,7 @@ uart_tx = port:PB19<2><1><default><default>
 uart_rx = port:PB20<2><1><default><default>
 
 [uart_para1]
-uart_used = 1
+uart_used = 0
 uart_port = 1
 uart_type = 4
 uart_tx = port:PA12<3><1><default><default>
@@ -312,7 +312,7 @@ lcdvsync =
 lcdgamma4iep = 22
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 0
 
 [hdmi_para]
@@ -417,7 +417,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PG03<2><1><2><default>
@@ -482,7 +482,7 @@ usb_detect_type = 1
 usb_id_gpio = port:PG10<0><1><default><default>
 usb_det_vbus_gpio = port:PG11<0><0><default><default>
 usb_drv_vbus_gpio = port:PG12<1><0><default><0>
-usb_host_init_state = 0
+usb_host_init_state = 1
 
 [usbc1]
 usb_used = 1
@@ -528,7 +528,7 @@ gps_osc_en = port:PA06<1><default><default><0>
 gps_rx_en = port:PA07<1><default><default><0>
 
 [sdio_wifi_para]
-sdio_wifi_used = 1
+sdio_wifi_used = 0
 sdio_wifi_sdc_id = 1
 sdio_wifi_mod_sel = 8
 mtk_5931_vdd_en = port:power203<1><0><default><0>
@@ -543,7 +543,7 @@ usi_bm01a_bt_hostwake =
 
 [usb_wifi_para]
 usb_wifi_used = 1
-usb_wifi_usbc_num = 1
+usb_wifi_usbc_num = 0
 
 [3g_para]
 3g_used = 0
@@ -599,7 +599,7 @@ spdif_dout = port:PB10<3><1><default><default>
 spdif_din =
 
 [audio_para]
-audio_used = 1
+audio_used = 0
 capture_used = 1
 audio_lr_change = 0
 audio_pa_ctrl = port:PB05<1><default><default><0>
