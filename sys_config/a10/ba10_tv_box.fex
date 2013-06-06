@@ -739,7 +739,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
-usb_drv_vbus_gpio = port:PH12<1><0><default><0>
+usb_drv_vbus_gpio = port:PH20<1><0><default><0>
 usb_host_init_state = 1
 
 [usb_feature]
@@ -788,6 +788,7 @@ swl_n20_vcc_en = port:PH12<1><default><default><0>
 [usb_wifi_para]
 usb_wifi_used = 1
 usb_wifi_usbc_num = 2
+usb_wifi_gpio_power = port:PH12<1><0><default><1>
 
 [3g_para]
 3g_used = 0
