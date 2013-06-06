@@ -905,3 +905,11 @@ pin_2 = port:PH20<1><default><default><1>
 [dynamic]
 MAC = "000000000000"
 
+[leds_para]
+leds_used = 1
+leds_num = 2
+leds_pin_1 = port:PH10<1><default><default><0>
+leds_name_1 = "red:ph10:led1"
+leds_pin_2 = port:PH20<1><default><default><1>
+leds_name_2 = "blue:ph20:led2"
+leds_default_2 = 1
