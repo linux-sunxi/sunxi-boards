@@ -124,7 +124,7 @@ emac_txclk = port:PA14<2><default><default><default>
 emac_crs = port:PA15<2><default><default><default>
 emac_col = port:PA16<2><default><default><default>
 emac_reset = port:PA17<1><default><default><default>
-emac_power =
+emac_power = port:PH15<1><default><default><0>
 
 [twi0_para]
 twi0_used = 1
