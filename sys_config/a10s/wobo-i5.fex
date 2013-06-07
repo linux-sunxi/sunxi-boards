@@ -275,8 +275,8 @@ lcd_bl_en_used = 1
 lcd_bl_en = port:power1<1><0><default><1>
 lcd_power_used = 1
 lcd_power = port:power0<1><0><default><1>
-lcd_pwm_used = 1
-lcd_pwm = port:PB02<2><0><default><default>
+lcd_pwm_used = 0
+lcd_pwm =
 lcd_gpio_0 =
 lcd_gpio_1 =
 lcd_gpio_2 =
@@ -708,3 +708,9 @@ output_type = 3
 output_mode = 5
 auto_hpd = 0
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PB02<1><0><default><1>
+leds_name_1 = "blue:pb02:led1"
+leds_default_1 = 1
