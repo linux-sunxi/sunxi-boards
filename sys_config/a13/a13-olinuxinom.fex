@@ -648,3 +648,9 @@ gpio_pin_13 = port:PG10<1><default><default><default>
 gpio_pin_14 = port:PG11<1><default><default><default>
 gpio_pin_15 = port:PB02<1><default><default><0>
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PG09<1><0><default><1>
+leds_name_1 = "green:pg09:led1"
+leds_default_1 = 1
