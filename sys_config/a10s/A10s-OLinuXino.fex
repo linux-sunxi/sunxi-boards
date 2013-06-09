@@ -1,6 +1,6 @@
 [product]
 version = "1.0"
-machine = "A12-EVB-V1.0"
+machine = "A10s-OLinuXino-MICRO"
 
 [target]
 boot_clock = 1008
