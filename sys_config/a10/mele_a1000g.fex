@@ -68,7 +68,7 @@ uart_debug_tx = port:PF02<4><default><default><default>
 uart_debug_rx = port:PF04<4><default><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB14<3><default><default><default>
 jtag_ck = port:PB15<3><default><default><default>
 jtag_do = port:PB16<3><default><default><default>
@@ -79,8 +79,8 @@ dram_baseaddr = 0x40000000
 dram_clk = 360
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 4096
-dram_io_width = 16
+dram_chip_density = 2048
+dram_io_width = 8
 dram_bus_width = 32
 dram_cas = 6
 dram_zq = 0x7b
@@ -124,7 +124,7 @@ emac_txclk = port:PA14<2><default><default><default>
 emac_crs = port:PA15<2><default><default><default>
 emac_col = port:PA16<2><default><default><default>
 emac_reset = port:PA17<1><default><default><default>
-emac_power =
+emac_power = port:PH15<1><default><default><0>
 
 [twi0_para]
 twi0_used = 1
@@ -132,12 +132,12 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
@@ -162,7 +162,7 @@ uart_dcd = port:PA16<4><1><default><default>
 uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used = 1
+uart_used = 0
 uart_port = 2
 uart_type = 4
 uart_tx = port:PI18<3><1><default><default>
@@ -257,7 +257,7 @@ full_duplex = 0
 manual_cs = 0
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -345,7 +345,7 @@ lcd1_screen_saturation = 57
 lcd1_screen_hue = 50
 
 [lcd0_para]
-lcd_used = 1
+lcd_used = 0
 lcd_x = 800
 lcd_y = 480
 lcd_dclk_freq = 33
@@ -640,7 +640,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 bus_width = 4
 sdc_cmd = port:PH22<5><1><2><default>
@@ -657,7 +657,7 @@ sdc_wp =
 sdc_used = 0
 
 [mmc3_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PI04<2><1><2><default>
@@ -727,7 +727,7 @@ kp_out6 = port:PH26<4><1><default><default>
 kp_out7 = port:PH27<4><1><default><default>
 
 [usbc0]
-usb_used = 1
+usb_used = 0
 usb_port_type = 2
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><0><default><default>
@@ -768,7 +768,7 @@ release = 100
 luns = 3
 
 [gsensor_para]
-gsensor_used = 1
+gsensor_used = 0
 gsensor_name = "gsenser"
 gsensor_twi_id = 1
 gsensor_twi_addr = 0x18
@@ -960,3 +960,11 @@ LV4_volt = 1300
 LV5_freq = 624000000
 LV5_volt = 1250
 
+[leds_para]
+leds_used = 1
+leds_num = 2
+leds_pin_1 = port:PH10<1><default><default><0>
+leds_name_1 = "red:ph10:led1"
+leds_pin_2 = port:PH20<1><default><default><1>
+leds_name_2 = "blue:ph20:led2"
+leds_default_2 = 1

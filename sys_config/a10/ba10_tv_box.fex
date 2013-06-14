@@ -68,8 +68,8 @@ dram_baseaddr = 0x40000000
 dram_clk = 384
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 4096
-dram_io_width = 16
+dram_chip_density = 2048
+dram_io_width = 8
 dram_bus_width = 32
 dram_cas = 6
 dram_zq = 0x7b
@@ -739,7 +739,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
-usb_drv_vbus_gpio = port:PH12<1><0><default><0>
+usb_drv_vbus_gpio = port:PH20<1><0><default><0>
 usb_host_init_state = 1
 
 [usb_feature]
@@ -788,6 +788,7 @@ swl_n20_vcc_en = port:PH12<1><default><default><0>
 [usb_wifi_para]
 usb_wifi_used = 1
 usb_wifi_usbc_num = 2
+usb_wifi_gpio_power = port:PH12<1><0><default><1>
 
 [3g_para]
 3g_used = 0
@@ -915,17 +916,6 @@ pmu_batdeten = 1
 [recovery_key]
 key_min = 4
 key_max = 6
-
-[gpio_para]
-gpio_used = 0
-gpio_num = 3
-gpio_pin_1 = port:PH10<1><default><default><0>
-gpio_pin_2 = port:PH20<1><default><default><1>
-gpio_pin_3 = port:PB03<0><default><default><default>
-
-[gpio_init]
-pin_1 = port:PH10<1><default><default><0>
-pin_2 = port:PH20<1><default><default><1>
 
 [dynamic]
 MAC = "000000000000"
