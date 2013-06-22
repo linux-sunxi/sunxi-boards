@@ -46,7 +46,7 @@ uart_debug_tx = port:PB19<2><1><default><default>
 uart_debug_rx = port:PB20<2><1><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB11<3><1><default><default>
 jtag_ck = port:PB12<3><1><default><default>
 jtag_do = port:PB13<3><1><default><default>
@@ -57,9 +57,9 @@ dram_baseaddr = 0x40000000
 dram_clk = 432
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 2048
-dram_io_width = 8
-dram_bus_width = 32
+dram_chip_density = 4096
+dram_io_width = 16
+dram_bus_width = 16
 dram_cas = 9
 dram_zq = 0x7b
 dram_odt_en = 0
@@ -133,12 +133,12 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB15<2><default><default><default>
 twi1_sda = port:PB16<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB17<2><default><default><default>
 twi2_sda = port:PB18<2><default><default><default>
 
@@ -150,7 +150,7 @@ uart_tx = port:PB19<2><1><default><default>
 uart_rx = port:PB20<2><1><default><default>
 
 [uart_para1]
-uart_used = 1
+uart_used = 0
 uart_port = 1
 uart_type = 4
 uart_tx = port:PA12<3><1><default><default>
@@ -226,7 +226,7 @@ motor_shake = port:PA16<1><default><default><0>
 
 [disp_init]
 disp_init_enable = 1
-disp_mode = 4
+disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 5
 screen1_output_type = 1
@@ -271,12 +271,12 @@ lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
-lcd_bl_en_used = 1
-lcd_bl_en = port:power1<1><0><default><1>
-lcd_power_used = 1
-lcd_power = port:power0<1><0><default><1>
-lcd_pwm_used = 1
-lcd_pwm = port:PB02<2><0><default><default>
+lcd_bl_en_used = 0
+lcd_bl_en =
+lcd_power_used = 0
+lcd_power =
+lcd_pwm_used = 0
+lcd_pwm =
 lcd_gpio_0 =
 lcd_gpio_1 =
 lcd_gpio_2 =
@@ -312,7 +312,7 @@ lcdvsync = port:PD27<2><0><default><default>
 lcdgamma4iep = 22
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 0
 
 [hdmi_para]
@@ -355,7 +355,7 @@ csi_d4 = port:PE08<3><default><default><default>
 csi_d5 = port:PE09<3><default><default><default>
 csi_d6 = port:PE10<3><default><default><default>
 csi_d7 = port:PE11<3><default><default><default>
-csi_reset = port:power3<1><default><default><0>
+csi_reset =
 csi_power_en =
 csi_stby = port:PB10<1><default><default><0>
 csi_flash =
@@ -417,7 +417,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PG03<2><1><2><default>
@@ -575,7 +575,7 @@ compass_twi_addr =
 compass_int =
 
 [bt_para]
-bt_used = 1
+bt_used = 0
 bt_uart_id = 3
 bt_mod_type = 1
 
@@ -598,8 +598,8 @@ spdif_dout = port:PB10<3><1><default><default>
 spdif_din =
 
 [audio_para]
-audio_used = 1
-capture_used = 1
+audio_used = 0
+capture_used = 0
 audio_lr_change = 0
 audio_pa_ctrl = port:PB05<1><default><default><0>
 
@@ -608,7 +608,7 @@ ir_used = 0
 ir0_rx = port:PB04<2><default><default><default>
 
 [rtc_para]
-rtc_used = 1
+rtc_used = 0
 rtc_name = "pcf8563"
 rtc_twi_id = 1
 rtc_twi_addr = 81
