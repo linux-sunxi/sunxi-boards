@@ -13,7 +13,7 @@ ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
 power_start = 0
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
