@@ -12,7 +12,7 @@ dcdc3_vol = 1250
 ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
@@ -63,7 +63,7 @@ uart_debug_tx = port:PF02<4><1><default><default>
 uart_debug_rx = port:PF04<4><1><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB14<3><default><default><default>
 jtag_ck = port:PB15<3><default><default><default>
 jtag_do = port:PB16<3><default><default><default>
@@ -99,7 +99,7 @@ mali_used = 1
 mali_clkdiv = 1
 
 [emac_para]
-emac_used = 0
+emac_used = 1
 emac_rxd3 = port:PA00<2><default><default><default>
 emac_rxd2 = port:PA01<2><default><default><default>
 emac_rxd1 = port:PA02<2><default><default><default>
@@ -125,12 +125,12 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
@@ -330,7 +330,7 @@ lcd1_saturation = 57
 lcd1_hue = 50
 
 [lcd0_para]
-lcd_used = 1
+lcd_used = 0
 lcd_x = 1024
 lcd_y = 600
 lcd_dclk_freq = 51
@@ -434,7 +434,7 @@ lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
 lcd_power =
-lcd_pwm_used = 1
+lcd_pwm_used = 0
 lcd_pwm = port:PI03<2><0><default><default>
 lcd_gpio_0 =
 lcd_gpio_1 =
@@ -470,7 +470,7 @@ lcdhsync = port:PH26<2><0><default><default>
 lcdvsync = port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 4
 dac1_src = 5
 dac2_src = 6
@@ -480,7 +480,7 @@ dac3_src = 0
 hdmi_used = 1
 
 [camera_list_para]
-camera_list_para_used = 1
+camera_list_para_used = 0
 ov7670 = 0
 gc0308 = 1
 gt2005 = 1
@@ -591,7 +591,7 @@ csi_power_en = port:PH16<1><default><default><0>
 csi_stby = port:PH19<1><default><default><0>
 
 [tvout_para]
-tvout_used = 1
+tvout_used = 0
 tvout_channel_num = 1
 
 [tvin_para]
@@ -727,31 +727,27 @@ usb_used = 1
 usb_port_type = 2
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
-usb_det_vbus_gpio = "axp_ctrl"
+usb_det_vbus_gpio = port:PH05<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_restrict_gpio = port:PH00<1><0><default><0>
 usb_host_init_state = 0
-usb_restric_flag = 0
-usb_restric_voltage = 3550000
-usb_restric_capacity = 5
 
 [usbc1]
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
+usb_id_gpio =
+usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:PH06<1><0><default><0>
-usb_restrict_gpio =
 usb_host_init_state = 1
-usb_restric_flag = 0
 
 [usbc2]
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
+usb_id_gpio =
+usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
-usb_restrict_gpio =
 usb_host_init_state = 1
-usb_restric_flag = 0
 
 [usb_feature]
 vendor_id = 6353
@@ -774,7 +770,7 @@ gsensor_int1 =
 gsensor_int2 =
 
 [gsensor_list_para]
-gsensor_det_used = 1
+gsensor_det_used = 0
 bma250 = 1
 mma8452 = 1
 mma7660 = 1
@@ -802,7 +798,7 @@ gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
 [wifi_para]
-wifi_used = 1
+wifi_used = 0
 wifi_sdc_id = 3
 wifi_usbc_id = 2
 wifi_usbc_type = 1
@@ -872,6 +868,7 @@ spdif_din =
 
 [audio_para]
 audio_used = 1
+capture_used = 1
 audio_pa_ctrl = port:PH15<1><default><default><1>
 
 [switch_para]
