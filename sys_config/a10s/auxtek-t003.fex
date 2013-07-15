@@ -764,3 +764,9 @@ output_type = 3
 output_mode = 5
 auto_hpd = 1
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PB02<1><0><default><0>
+leds_name_1 = "red:pb02:led1"
+leds_default_1 = 1
