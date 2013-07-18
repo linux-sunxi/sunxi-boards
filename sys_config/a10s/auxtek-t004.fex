@@ -417,7 +417,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 0
+sdc_used = 1
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PG03<2><1><2><default>
