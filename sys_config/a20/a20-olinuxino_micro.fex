@@ -1066,3 +1066,12 @@ pin_74 = port:PG10<0><default><default><default>
 pin_75 = port:PG11<0><default><default><default>
 pin_76 = port:PH08<1><default><default><1>
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PH02<1><default><default><0>
+leds_name_1 = "green:ph02:led1"
+leds_default_1 = 1
+
+[tabletkeys_para]
+tabletkeys_used = 1
