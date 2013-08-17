@@ -630,3 +630,17 @@ pmu_batdeten = 1
 key_min = 4
 key_max = 6
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PG09<1><0><default><1>
+leds_name_1 = "green:pg09:led1"
+leds_default_1 = 1
+
+[tabletkeys_para]
+tabletkeys_used = 1
+key0_code = 115
+key1_code = 114
+key2_code = 139
+key3_code = 28
+key4_code = 102
