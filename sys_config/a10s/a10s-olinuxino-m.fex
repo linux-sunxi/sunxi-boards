@@ -789,3 +789,11 @@ leds_num = 1
 leds_pin_1 = port:PE03<1><default><default><0>
 leds_name_1 = "green:pe03:led1"
 leds_default_1 = 1
+
+[tabletkeys_para]
+tabletkeys_used = 1
+key0_code = 115
+key1_code = 114
+key2_code = 139
+key3_code = 28
+key4_code = 102
