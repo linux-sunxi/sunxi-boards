@@ -556,6 +556,7 @@ spdif_din =
 
 [audio_para]
 audio_used = 1
+capture_used = 1
 audio_pa_ctrl = port:PG10<1><default><default><0>
 
 [ir_para]

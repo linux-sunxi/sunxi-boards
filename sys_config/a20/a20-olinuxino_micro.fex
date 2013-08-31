@@ -817,6 +817,7 @@ spdif_din =
 
 [audio_para]
 audio_used = 1
+capture_used = 1
 
 [switch_para]
 switch_used = 1
