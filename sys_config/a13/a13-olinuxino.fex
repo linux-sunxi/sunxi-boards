@@ -136,11 +136,11 @@ spi_mosi = port:PG11<2><default><default><default>
 spi_miso = port:PG12<2><default><default><default>
 
 [spi2_para]
-spi_used = 0
+spi_used = 1
 spi_cs0 = port:PE00<4><default><default><default>
 spi_sclk = port:PE01<4><default><default><default>
-spi_mosi = port:PB02<4><default><default><default>
-spi_miso = port:PB03<4><default><default><default>
+spi_mosi = port:PE02<4><default><default><default>
+spi_miso = port:PE03<4><default><default><default>
 
 [rtp_para]
 rtp_used = 1
@@ -284,7 +284,7 @@ dac0_src = 0
 hdmi_used = 0
 
 [csi0_para]
-csi_used = 1
+csi_used = 0
 csi_mode = 0
 csi_dev_qty = 1
 csi_stby_mode = 1
@@ -377,7 +377,7 @@ sdc_clk = port:PF02<2><1><2><default>
 sdc_cmd = port:PF03<2><1><2><default>
 sdc_d3 = port:PF04<2><1><2><default>
 sdc_d2 = port:PF05<2><1><2><default>
-sdc_det = port:PG00<0><1><default><default>
+sdc_det = port:PG00<0><0><default><default>
 sdc_use_wp = 0
 sdc_wp =
 
@@ -645,3 +645,22 @@ key1_code = 114
 key2_code = 139
 key3_code = 28
 key4_code = 102
+
+[gpio_para]
+gpio_used = 1
+gpio_num = 15
+gpio_pin_1 = port:PB03<1><default><default><default>
+gpio_pin_2 = port:PB04<1><default><default><default>
+gpio_pin_3 = port:PB10<1><default><default><default>
+gpio_pin_4 = port:PE04<0><default><default><default>
+gpio_pin_5 = port:PE05<0><default><default><default>
+gpio_pin_6 = port:PE06<0><default><default><default>
+gpio_pin_7 = port:PE07<0><default><default><default>
+gpio_pin_8 = port:PE08<1><default><default><default>
+gpio_pin_9 = port:PE09<1><default><default><default>
+gpio_pin_10 = port:PE10<1><default><default><default>
+gpio_pin_11 = port:PE11<1><default><default><default>
+gpio_pin_12 = port:PG09<1><default><default><default>
+gpio_pin_13 = port:PG10<1><default><default><default>
+gpio_pin_14 = port:PG11<1><default><default><default>
+gpio_pin_15 = port:PB02<1><default><default><0>
