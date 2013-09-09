@@ -741,7 +741,7 @@ usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:PH12<1><0><default><0>
-usb_host_init_state = 0
+usb_host_init_state = 1
 
 [usb_feature]
 vendor_id = 6353
