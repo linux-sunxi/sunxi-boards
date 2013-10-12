@@ -58,7 +58,7 @@ dram_clk = 432
 dram_type = 3
 dram_rank_num = 1
 dram_chip_density = 2048
-dram_io_width = 8
+dram_io_width = 16
 dram_bus_width = 32
 dram_cas = 9
 dram_zq = 0x7b
@@ -226,7 +226,7 @@ motor_shake = port:PA16<1><default><default><0>
 
 [disp_init]
 disp_init_enable = 1
-disp_mode = 4
+disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 5
 screen1_output_type = 1
