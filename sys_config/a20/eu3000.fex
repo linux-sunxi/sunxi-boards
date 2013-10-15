@@ -13,7 +13,7 @@ ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
 power_start = 0
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
@@ -77,14 +77,14 @@ standby_mode = 0
 dram_baseaddr = 0x40000000
 dram_clk = 432
 dram_type = 3
-dram_rank_num = -1
-dram_chip_density = -1
-dram_io_width = -1
-dram_bus_width = -1
+dram_rank_num = 1
+dram_chip_density = 4096
+dram_io_width = 16
+dram_bus_width = 32
 dram_cas = 9
 dram_zq = 0x7b
 dram_odt_en = 0
-dram_size = -1
+dram_size = 1024
 dram_tpr0 = 0x42d899b7
 dram_tpr1 = 0xa090
 dram_tpr2 = 0x22a00
@@ -318,7 +318,7 @@ good_block_ratio = 0
 
 [disp_init]
 disp_init_enable = 1
-disp_mode = 4
+disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 5
 screen1_output_type = 2
