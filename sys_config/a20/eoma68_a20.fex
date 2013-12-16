@@ -1,12 +1,12 @@
 [product]
-version = "100"
-machine = "k70-v10"
+version = "1.1"
+machine = "A20-EOMA68-DS113-V1.1"
 
 [platform]
 eraseflag = 0
 
 [target]
-boot_clock = 912
+boot_clock = 1008
 dcdc2_vol = 1400
 dcdc3_vol = 1250
 ldo2_vol = 3000
