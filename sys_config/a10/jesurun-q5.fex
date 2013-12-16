@@ -68,7 +68,7 @@ uart_debug_tx = port:PF02<4><default><default><default>
 uart_debug_rx = port:PF04<4><default><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB14<3><default><default><default>
 jtag_ck = port:PB15<3><default><default><default>
 jtag_do = port:PB16<3><default><default><default>
@@ -78,14 +78,14 @@ jtag_di = port:PB17<3><default><default><default>
 dram_baseaddr = 0x40000000
 dram_clk = 312
 dram_type = 3
-dram_rank_num =
-dram_chip_density =
-dram_io_width =
-dram_bus_width =
+dram_rank_num = 1
+dram_chip_density = 2048
+dram_io_width = 8
+dram_bus_width = 32
 dram_cas = 6
 dram_zq = 0x7b
 dram_odt_en = 0
-dram_size =
+dram_size = 1024
 dram_tpr0 = 0x30926692
 dram_tpr1 = 0x1090
 dram_tpr2 = 0x1a0c8
@@ -132,12 +132,12 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
@@ -162,7 +162,7 @@ uart_dcd = port:PA16<4><1><default><default>
 uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used = 1
+uart_used = 0
 uart_port = 2
 uart_type = 4
 uart_tx = port:PI18<3><1><default><default>
@@ -257,7 +257,7 @@ full_duplex = 0
 manual_cs = 0
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -618,7 +618,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
@@ -636,7 +636,7 @@ sdc_use_wp = 0
 sdc_wp =
 
 [mmc1_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 1
 bus_width = 4
 sdc_cmd = port:PH22<5><1><2><default>
@@ -653,7 +653,7 @@ sdc_wp =
 sdc_used = 0
 
 [mmc3_para]
-sdc_used = 1
+sdc_used = 0
 sdc_detmode = 4
 bus_width = 4
 sdc_cmd = port:PI04<2><1><2><default>
@@ -747,7 +747,7 @@ usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
-usb_host_init_state = 0
+usb_host_init_state = 1
 
 [usb_feature]
 vendor_id = 6353
@@ -764,7 +764,7 @@ release = 100
 luns = 3
 
 [gsensor_para]
-gsensor_used = 1
+gsensor_used = 0
 gsensor_name = "gsenser"
 gsensor_twi_id = 1
 gsensor_twi_addr = 0x18
@@ -957,3 +957,9 @@ output_type = 3
 output_mode = 5
 auto_hpd = 1
 
+[leds_para]
+leds_used = 1
+leds_num = 1
+leds_pin_1 = port:PH20<1><default><default><0>
+leds_name_1 = "green:ph20:led1"
+leds_default_1 = 1
