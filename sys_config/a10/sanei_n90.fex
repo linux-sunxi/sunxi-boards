@@ -69,13 +69,13 @@ dram_baseaddr = 0x40000000
 dram_clk = 456
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 2048
-dram_io_width = 16
+dram_chip_density = 4096
+dram_io_width = 8
 dram_bus_width = 32
 dram_cas = 6
 dram_zq = 0x7b
-dram_odt_en = 0
-dram_size = 512
+dram_odt_en = 1
+dram_size = 1024
 dram_tpr0 = 0x30926692
 dram_tpr1 = 0x1090
 dram_tpr2 = 0x1a0c8
@@ -537,52 +537,6 @@ csi_stby_b = port:PH19<1><default><default><1>
 
 [csi1_para]
 csi_used = 0
-csi_mname = "gc0308"
-csi_twi_id = 1
-csi_twi_addr = 0x42
-csi_if = 0
-csi_mode = 0
-csi_dev_qty = 1
-csi_vflip = 0
-csi_hflip = 0
-csi_stby_mode = 1
-csi_iovdd = "axp20_hdmi"
-csi_avdd = "axp20_hdmi"
-csi_dvdd = ""
-csi_pck = port:PG00<3><default><default><default>
-csi_ck = port:PG01<3><default><default><default>
-csi_hsync = port:PG02<3><default><default><default>
-csi_vsync = port:PG03<3><default><default><default>
-csi_d0 = port:PG04<3><default><default><default>
-csi_d1 = port:PG05<3><default><default><default>
-csi_d2 = port:PG06<3><default><default><default>
-csi_d3 = port:PG07<3><default><default><default>
-csi_d4 = port:PG08<3><default><default><default>
-csi_d5 = port:PG09<3><default><default><default>
-csi_d6 = port:PG10<3><default><default><default>
-csi_d7 = port:PG11<3><default><default><default>
-csi_d8 =
-csi_d9 =
-csi_d10 =
-csi_d11 =
-csi_d12 =
-csi_d13 =
-csi_d14 =
-csi_d15 =
-csi_d16 =
-csi_d17 =
-csi_d18 =
-csi_d19 =
-csi_d20 =
-csi_d21 =
-csi_d22 =
-csi_d23 =
-csi_reset = port:PH14<1><default><default><0>
-csi_power_en = port:PH17<1><default><default><0>
-csi_stby = port:PH19<1><default><default><1>
-csi_reset_b =
-csi_power_en_b =
-csi_stby_b =
 
 [tvout_para]
 tvout_used = 0
@@ -613,34 +567,12 @@ sdc_wp =
 
 [mmc1_para]
 sdc_used = 0
-sdc_detmode = 1
-bus_width = 4
-sdc_cmd = port:PH22<5><1><2><default>
-sdc_clk = port:PH23<5><1><2><default>
-sdc_d0 = port:PH24<5><1><2><default>
-sdc_d1 = port:PH25<5><1><2><default>
-sdc_d2 = port:PH26<5><1><2><default>
-sdc_d3 = port:PH27<5><1><2><default>
-sdc_det = port:PH02<0><1><default><default>
-sdc_use_wp = 0
-sdc_wp =
 
 [mmc2_para]
 sdc_used = 0
 
 [mmc3_para]
-sdc_used = 1
-sdc_detmode = 4
-bus_width = 4
-sdc_cmd = port:PI04<2><1><2><default>
-sdc_clk = port:PI05<2><1><2><default>
-sdc_d0 = port:PI06<2><1><2><default>
-sdc_d1 = port:PI07<2><1><2><default>
-sdc_d2 = port:PI08<2><1><2><default>
-sdc_d3 = port:PI09<2><1><2><default>
-sdc_det =
-sdc_use_wp = 0
-sdc_wp =
+sdc_used = 0
 
 [ms_para]
 ms_used = 0
