@@ -16,6 +16,7 @@ power_start = 0
 storage_type = -1
 
 [clock]
+pll3 = 297
 pll4 = 300
 pll6 = 600
 pll7 = 297
