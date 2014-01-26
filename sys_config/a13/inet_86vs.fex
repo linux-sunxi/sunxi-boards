@@ -131,6 +131,13 @@ uart_type = 2
 uart_tx = port:PG03<4><1><default><default>
 uart_rx = port:PG04<4><1><default><default>
 
+[uart_para2]
+uart_used = 0
+uart_port = 3
+uart_type = 2
+uart_tx = port:PG03<4><1><default><default>
+uart_rx = port:PG04<4><1><default><default>
+
 [uart_para3]
 uart_used = 0
 uart_port = 3
