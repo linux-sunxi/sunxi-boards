@@ -135,6 +135,13 @@ uart_type = 2
 uart_tx =
 uart_rx =
 
+[uart_para3]
+uart_used = 0
+uart_port = 1
+uart_type = 4
+uart_tx =
+uart_rx =
+
 [spi1_para]
 spi_used = 0
 spi_cs0 = port:PG09<2><default><default><default>
@@ -177,6 +184,11 @@ tkey_name = "hv_keypad"
 tkey_twi_id = 2
 tkey_twi_addr = 0x62
 tkey_int =
+
+[tabletkeys_para]
+tabletkeys_used = 1
+key0_code = 114
+key1_code = 115
 
 [motor_para]
 motor_used = 0
@@ -413,6 +425,8 @@ usb_controller_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
 usb_drv_vbus_gpio = port:power203<1><default><default><0>
+; set usb_host_init_state to 0 to not enable USB controller until a sunxi-specific USB WiFi driver is loaded
+; saves power if you do not use WiFi
 usb_host_init_state = 1
 
 [port_pm]
