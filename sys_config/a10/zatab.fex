@@ -151,7 +151,7 @@ uart_dcd	= port:PA16<4><1><default><default>
 uart_ring	= port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used	= 1
+uart_used	= 0
 uart_port	= 2
 uart_type	= 4
 uart_tx	= port:PI18<3><1><default><default>
@@ -488,7 +488,7 @@ lcdhsync	= port:PH26<2><0><default><default>
 lcdvsync	= port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used	= 1
+dac_used	= 0
 dac0_src	= 4
 dac1_src	= 5
 dac2_src	= 6
@@ -616,7 +616,7 @@ csi_flash_b	=
 csi_af_en_b	=
 
 [tvout_para]
-tvout_used	= 1
+tvout_used	= 0
 tvout_channel_num	= 1
 tv_en	= port:PI12<1><default><default><0>
 
@@ -625,7 +625,7 @@ tvin_used	= 0
 tvin_channel_num	= 4
 
 [sata_para]
-sata_used	= 1
+sata_used	= 0
 sata_power_en	=
 
 [mmc0_para]
@@ -643,7 +643,7 @@ sdc_use_wp	= 0
 sdc_wp	=
 
 [mmc1_para]
-sdc_used	= 1
+sdc_used	= 0
 sdc_detmode	= 1
 bus_width	= 4
 sdc_cmd	= port:PH22<5><1><2><default>
@@ -660,7 +660,7 @@ sdc_wp	=
 sdc_used	= 0
 
 [mmc3_para]
-sdc_used	= 1
+sdc_used	= 0
 sdc_detmode	= 4
 bus_width	= 4
 sdc_cmd	= port:PI04<2><1><2><default>
@@ -858,7 +858,7 @@ audio_used	= 1
 audio_pa_ctrl	= port:PH15<1><default><default><0>
 
 [ir_para]
-ir_used	= 1
+ir_used	= 0
 ir0_rx	= port:PB04<2><default><default><default>
 
 [pmu_para]
