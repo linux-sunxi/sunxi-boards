@@ -923,3 +923,11 @@ pmu_batdeten	= 1
 key_min	= 4
 key_max	= 6
 
+[tabletkeys_para]
+tabletkeys_used = 1
+; KEY_VOLUMEUP
+key0_code = 115
+; KEY_VOLUMEDOWN
+key4_code = 114
+; KEY_ESC
+key11_code = 1
