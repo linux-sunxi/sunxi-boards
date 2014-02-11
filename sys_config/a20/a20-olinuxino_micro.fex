@@ -562,7 +562,7 @@ tvin_channel_num = 4
 
 [sata_para]
 sata_used = 1
-ata_power_ene = port:PB08<1><default><default><0>
+sata_power_en = port:PB08<1><default><default><0>
 
 [mmc0_para]
 sdc_used = 1
