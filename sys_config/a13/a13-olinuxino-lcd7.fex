@@ -634,7 +634,7 @@ key4_code = 102
 
 [gpio_para]
 gpio_used = 1
-gpio_num = 14
+gpio_num = 15
 gpio_pin_1 = port:PB03<1><default><default><default>
 gpio_pin_2 = port:PB04<1><default><default><default>
 gpio_pin_3 = port:PB10<1><default><default><default>
@@ -649,3 +649,5 @@ gpio_pin_11 = port:PE11<1><default><default><default>
 gpio_pin_12 = port:PG09<1><default><default><default>
 gpio_pin_13 = port:PG10<1><default><default><default>
 gpio_pin_14 = port:PG11<1><default><default><default>
+gpio_pin_15 = port:PB02<1><default><default><0>
+
