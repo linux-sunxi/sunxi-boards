@@ -23,7 +23,9 @@ sdc_d2 = port:PF05<2><1><default><default>
 
 [card_boot]
 logical_start = 40960
-sprite_gpio0 =
+sprite_gpio0 = port:PH15<1><default><default><0>
+sprite_work_delay = 1000
+sprite_err_delay = 100
 
 [card_boot0_para]
 card_ctrl = 0
@@ -69,8 +71,8 @@ dram_baseaddr = 0x40000000
 dram_clk = 408
 dram_type = 3
 dram_rank_num = 1
-dram_chip_density = 2048
-dram_io_width = 8
+dram_chip_density = 4096
+dram_io_width = 16
 dram_bus_width = 32
 dram_cas = 6
 dram_zq = 0x7b
@@ -82,7 +84,7 @@ dram_tpr2 = 0x1a0c8
 dram_tpr3 = 0x0
 dram_tpr4 = 0x0
 dram_tpr5 = 0x0
-dram_emr1 = 0x4
+dram_emr1 = 0x0
 dram_emr2 = 0x0
 dram_emr3 = 0x0
 
@@ -213,12 +215,8 @@ spi_mosi = port:PA02<4><default><default><default>
 spi_miso = port:PA03<4><default><default><default>
 
 [spi2_para]
-spi_used = 0
+spi_used = 1
 spi_cs_bitmap = 1
-spi_cs0 = port:PB14<2><default><default><default>
-spi_sclk = port:PB15<2><default><default><default>
-spi_mosi = port:PB16<2><default><default><default>
-spi_miso = port:PB17<2><default><default><default>
 spi_cs0 = port:PC19<3><default><default><default>
 spi_sclk = port:PC20<3><default><default><default>
 spi_mosi = port:PC21<3><default><default><default>
@@ -234,7 +232,7 @@ spi_miso = port:PI08<3><default><default><default>
 spi_cs1 = port:PA09<3><default><default><default>
 
 [spi_devices]
-spi_dev_num = 1
+spi_dev_num = 2
 
 [spi_board0]
 modalias = "spidev"
@@ -242,6 +240,15 @@ max_speed_hz = 12000000
 bus_num = 0
 chip_select = 0
 mode = 3
+full_duplex = 0
+manual_cs = 0
+
+[spi_board1]
+modalias = "spidev"
+max_speed_hz = 12000000
+bus_num = 2
+chip_select = 0
+mode = 0
 full_duplex = 0
 manual_cs = 0
 
@@ -324,7 +331,7 @@ fb1_pixel_sequence = 0
 fb1_scaler_mode_enable = 0
 
 [lcd0_para]
-lcd_used = 1
+lcd_used = 0
 lcd_x = 800
 lcd_y = 480
 lcd_dclk_freq = 33
@@ -707,11 +714,11 @@ kp_out7 = port:PH27<4><1><default><default>
 
 [usbc0]
 usb_used = 1
-usb_port_type = 2
+usb_port_type = 0
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
 usb_det_vbus_gpio = port:PH05<0><0><default><default>
-usb_drv_vbus_gpio = port:PB09<1><0><default><0>
+usb_drv_vbus_gpio = port:PD02<1><0><default><0>
 usb_host_init_state = 0
 
 [usbc1]
@@ -720,7 +727,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
-usb_drv_vbus_gpio = port:PH06<1><0><default><0>
+usb_drv_vbus_gpio = port:PD02<1><0><default><0>
 usb_host_init_state = 1
 
 [usbc2]
@@ -831,6 +838,8 @@ spdif_din =
 
 [audio_para]
 audio_used = 1
+capture_used = 1
+audio_lr_change = 0
 audio_pa_ctrl = port:PH15<1><default><default><0>
 
 [ir_para]
@@ -901,7 +910,7 @@ key_max = 6
 
 [gpio_para]
 gpio_used = 1
-gpio_num = 20
+gpio_num = 24
 gpio_pin_0 = port:PI19<0><1><default><default>
 gpio_pin_1 = port:PI18<0><1><default><default>
 gpio_pin_2 = port:PH07<0><1><default><default>
@@ -922,6 +931,10 @@ gpio_pin_16 = port:PH13<0><1><default><default>
 gpio_pin_17 = port:PH14<0><1><default><default>
 gpio_pin_18 = port:PH15<1><default><default><0>
 gpio_pin_19 = port:PH16<1><default><default><0>
+gpio_pin_20 = port:PC19<0><1><default><default>
+gpio_pin_21 = port:PC21<0><1><default><default>
+gpio_pin_22 = port:PC22<0><1><default><default>
+gpio_pin_23 = port:PC20<0><1><default><default>
 
 [sb_pwm0]
 pwm_gpio = port:PH06<1><default><default><default>
@@ -940,4 +953,19 @@ pwm_gpio = port:PI10<1><default><default><default>
 
 [sb_pwm5]
 pwm_gpio = port:PI12<1><default><default><default>
+
+[dvfs_table]
+max_freq = 1008000000
+min_freq = 60000000
+LV_count = 5
+LV1_freq = 1056000000
+LV1_volt = 1500
+LV2_freq = 1008000000
+LV2_volt = 1400
+LV3_freq = 912000000
+LV3_volt = 1350
+LV4_freq = 864000000
+LV4_volt = 1300
+LV5_freq = 624000000
+LV5_volt = 1250
 
