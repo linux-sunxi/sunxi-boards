@@ -1,6 +1,6 @@
 [product]
-version = "100"
-machine = "evb-v10"
+version = "1.00"
+machine = "MK802II-A20"
 
 [platform]
 eraseflag = 0
@@ -63,7 +63,7 @@ uart_debug_tx = port:PF02<4><1><default><default>
 uart_debug_rx = port:PF04<4><1><default><default>
 
 [jtag_para]
-jtag_enable = 1
+jtag_enable = 0
 jtag_ms = port:PB14<3><default><default><default>
 jtag_ck = port:PB15<3><default><default><default>
 jtag_do = port:PB16<3><default><default><default>
@@ -754,22 +754,10 @@ gps_vcc_en = port:PC22<1><default><default><0>
 gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
-[wifi_para]
-wifi_used = 1
-wifi_sdc_id = 3
-wifi_usbc_id = 2
-wifi_usbc_type = 1
-wifi_mod_sel = 5
-wifi_power = ""
-rtk_rtl8723as_wl_dis = port:PH09<1><default><default><0>
-rtk_rtl8723as_bt_dis = port:PB05<1><default><default><0>
-rtk_rtl8723as_wl_host_wake = port:PH10<0><default><default><0>
-rtk_rtl8723as_bt_host_wake = port:PI21<0><default><default><0>
-ap6xxx_wl_regon = port:PH09<1><default><default><0>
-ap6xxx_wl_host_wake = port:PH10<0><default><default><0>
-ap6xxx_bt_regon = port:PB05<1><default><default><0>
-ap6xxx_bt_wake = port:PI20<1><default><default><0>
-ap6xxx_bt_host_wake = port:PI21<0><default><default><0>
+[usb_wifi_para]
+usb_wifi_used = 0
+usb_wifi_usbc_num = 2
+usb_host_init_state = 1
 
 [3g_para]
 3g_used = 0
