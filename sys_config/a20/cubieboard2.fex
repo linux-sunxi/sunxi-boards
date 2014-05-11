@@ -1,14 +1,14 @@
 [product]
 version = "100"
-machine = "cubieboard"
+machine = "cubieboard2"
 
 [platform]
 eraseflag = 0
 
 [target]
 boot_clock = 912
-dcdc2_vol = 1400
-dcdc3_vol = 1250
+dcdc2_vol = 1450
+dcdc3_vol = 1300
 ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
@@ -956,20 +956,20 @@ key_max = 40
 
 [dvfs_table]
 max_freq = 912000000
-min_freq = 400000000
+min_freq = 720000000
 LV_count = 7
 LV1_freq = 1008000000
 LV1_volt = 1450
 LV2_freq = 912000000
-LV2_volt = 1400
+LV2_volt = 1425
 LV3_freq = 864000000
-LV3_volt = 1300
+LV3_volt = 1350
 LV4_freq = 720000000
-LV4_volt = 1200
+LV4_volt = 1250
 LV5_freq = 528000000
-LV5_volt = 1100
+LV5_volt = 1150
 LV6_freq = 312000000
-LV6_volt = 1050
+LV6_volt = 1100
 LV7_freq = 144000000
 LV7_volt = 1050
 
