@@ -80,14 +80,14 @@ standby_mode = 0
 dram_baseaddr = 0x40000000
 dram_clk = 384
 dram_type = 3
-dram_rank_num = -1
-dram_chip_density = -1
-dram_io_width = -1
-dram_bus_width = -1
+dram_rank_num = 1
+dram_chip_density = 4096
+dram_io_width = 16
+dram_bus_width = 32
 dram_cas = 9
 dram_zq = 0x7f
 dram_odt_en = 0
-dram_size = -1
+dram_size = 1024
 dram_tpr0 = 0x42d899b7
 dram_tpr1 = 0xa090
 dram_tpr2 = 0x22a00
@@ -129,22 +129,22 @@ twi0_scl = port:PB00<2><default><default><default>
 twi0_sda = port:PB01<2><default><default><default>
 
 [twi1_para]
-twi1_used = 1
+twi1_used = 0
 twi1_scl = port:PB18<2><default><default><default>
 twi1_sda = port:PB19<2><default><default><default>
 
 [twi2_para]
-twi2_used = 1
+twi2_used = 0
 twi2_scl = port:PB20<2><default><default><default>
 twi2_sda = port:PB21<2><default><default><default>
 
 [twi3_para]
-twi3_used = 1
+twi3_used = 0
 twi3_scl = port:PI00<3><default><default><default>
 twi3_sda = port:PI01<3><default><default><default>
 
 [twi4_para]
-twi4_used = 1
+twi4_used = 0
 twi4_scl = port:PI02<3><default><default><default>
 twi4_sda = port:PI03<3><default><default><default>
 
@@ -251,7 +251,7 @@ spi_mosi = port:PA07<3><default><default><default>
 spi_miso = port:PA08<3><default><default><default>
 
 [rtp_para]
-rtp_used = 1
+rtp_used = 0
 rtp_screen_size = 5
 rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
@@ -260,7 +260,7 @@ rtp_sensitive_level = 0xf
 rtp_exchange_x_y_flag = 0
 
 [ctp_para]
-ctp_used = 1
+ctp_used = 0
 ctp_twi_id = 2
 ctp_twi_name =
 ctp_screen_max_x = 800
@@ -355,7 +355,7 @@ lcd_y = 720
 lcd_width = 0
 lcd_height = 0
 lcd_dclk_freq = 33
-lcd_pwm_not_used = 0
+lcd_pwm_not_used = 1
 lcd_pwm_ch = 0
 lcd_pwm_freq = 10000
 lcd_pwm_pol = 0
@@ -381,11 +381,11 @@ lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
-lcd_bl_en_used = 1
+lcd_bl_en_used = 0
 lcd_bl_en = port:PH07<1><0><default><1>
-lcd_power_used = 1
+lcd_power_used = 0
 lcd_power = port:PH08<1><0><default><1>
-lcd_pwm_used = 1
+lcd_pwm_used = 0
 lcd_pwm = port:PB02<2><0><default><default>
 lcdd0 = port:PD00<2><0><default><default>
 lcdd1 = port:PD01<2><0><default><default>
@@ -421,7 +421,7 @@ lcd_used = 0
 lcd_x = 0
 lcd_y = 0
 lcd_dclk_freq = 0
-lcd_pwm_not_used = 0
+lcd_pwm_not_used = 1
 lcd_pwm_ch = 1
 lcd_pwm_freq = 0
 lcd_pwm_pol = 0
@@ -451,7 +451,7 @@ lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
 lcd_power =
-lcd_pwm_used = 1
+lcd_pwm_used = 0
 lcd_pwm = port:PI03<2><0><default><default>
 lcd_gpio_0 =
 lcd_gpio_1 =
@@ -497,7 +497,7 @@ dac3_src = 0
 hdmi_used = 1
 
 [camera_list_para]
-camera_list_para_used = 1
+camera_list_para_used = 0
 ov7670 = 0
 gc0308 = 1
 gt2005 = 0
@@ -596,7 +596,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
@@ -883,7 +883,7 @@ pcm_dout3 =
 pcm_din = port:PA17<6><1><default><default>
 
 [spdif_para]
-spdif_used = 1
+spdif_used = 0
 spdif_mclk =
 spdif_dout = port:PB13<4><1><default><default>
 spdif_din =
