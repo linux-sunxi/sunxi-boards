@@ -278,11 +278,10 @@ motor_used = 0
 motor_shake = port:PB03<1><default><default><1>
 
 [nand_para]
-nand_used = 0
+nand_used = 1
 nand_we = port:PC00<2><default><default><default>
 nand_ale = port:PC01<2><default><default><default>
 nand_cle = port:PC02<2><default><default><default>
-nand_ce1 = port:PC03<2><default><default><default>
 nand_ce0 = port:PC04<2><default><default><default>
 nand_nre = port:PC05<2><default><default><default>
 nand_rb0 = port:PC06<2><default><default><default>
@@ -295,15 +294,11 @@ nand_d4 = port:PC12<2><default><default><default>
 nand_d5 = port:PC13<2><default><default><default>
 nand_d6 = port:PC14<2><default><default><default>
 nand_d7 = port:PC15<2><default><default><default>
-nand_wp = port:PC16<2><default><default><default>
-nand_ce2 = port:PC17<2><default><default><default>
-nand_ce3 = port:PC18<2><default><default><default>
 nand_ce4 =
 nand_ce5 =
 nand_ce6 =
 nand_ce7 =
-nand_spi = port:PC23<3><default><default><default>
-nand_ndqs = port:PC24<2><default><default><default>
+good_block_ratio = 0
 
 [disp_init]
 disp_init_enable = 1
