@@ -171,6 +171,7 @@ gmac_txclk          = port:PA14<0><default><3><default>
 gmac_txck           = port:PA15<5><default><3><default>
 gmac_clkin          = port:PA16<5><default><3><default>
 gmac_txerr          = port:PA17<0><default><3><default>
+gmac_power          = port:PH16<1><default><default><1>
 
 [gpio_para]
 gpio_used = 1
@@ -1181,7 +1182,6 @@ bb_vbat			= port:PA09<1><default><default><0>
 bb_pwr_on		= port:PI01<1><default><default><0>
 ;bb_wake		= port:PI00<1><default><default><1>
 bb_rst			= port:PI02<1><default><default><0>
-#gmac_pwr	        = port:PH16<1><default><default><1>
 bb_dldo			=
 bb_dldo_min_uV	=
 bb_dldo_max_uV	=
