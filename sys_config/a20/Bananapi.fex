@@ -74,7 +74,7 @@ standby_mode = 0
 
 [dram_para]
 dram_baseaddr = 0x40000000
-dram_clk = 480
+dram_clk = 432
 dram_type = 3
 dram_rank_num = 1
 dram_chip_density = 4096
@@ -184,7 +184,7 @@ uart_dcd = port:PA16<4><1><default><default>
 uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used = 0
+uart_used = 1
 uart_port = 2
 uart_type = 4
 uart_tx = port:PI18<3><1><default><default>
@@ -193,7 +193,7 @@ uart_rts = port:PI16<3><1><default><default>
 uart_cts = port:PI17<3><1><default><default>
 
 [uart_para3]
-uart_used = 0
+uart_used = 1
 uart_port = 3
 uart_type = 4
 uart_tx = port:PH00<4><1><default><default>
@@ -223,15 +223,15 @@ uart_tx = port:PA12<4><1><default><default>
 uart_rx = port:PA13<4><1><default><default>
 
 [uart_para7]
-uart_used = 0
+uart_used = 1
 uart_port = 7
 uart_type = 2
 uart_tx = port:PA14<4><1><default><default>
 uart_rx = port:PA15<4><1><default><default>
 
 [spi0_para]
-spi_used = 0
-spi_cs_bitmap = 1
+spi_used = 1
+spi_cs_bitmap = 3
 spi_cs0 = port:PI10<2><default><default><default>
 spi_cs1 = port:PI14<2><default><default><default>
 spi_sclk = port:PI11<2><default><default><default>
@@ -264,6 +264,27 @@ spi_cs1 = port:PA09<3><default><default><default>
 spi_sclk = port:PA06<3><default><default><default>
 spi_mosi = port:PA07<3><default><default><default>
 spi_miso = port:PA08<3><default><default><default>
+
+[spi_devices]
+spi_dev_num = 2
+
+[spi_board0]
+modalias = "spidev"
+max_speed_hz = 12000000
+bus_num = 0
+chip_select = 0
+mode = 3
+full_duplex = 0
+manual_cs = 0
+
+[spi_board1]
+modalias = "spidev"
+max_speed_hz = 12000000
+bus_num = 0
+chip_select = 1
+mode = 3
+full_duplex = 0
+manual_cs = 0
 
 [ctp_para]
 ctp_used = 0
@@ -303,26 +324,22 @@ gpio_num = 88
 gpio_pin_1 = port:PB20<1><default><default><default>
 gpio_pin_2 = port:PB21<1><default><default><default>
 gpio_pin_3 = port:PB20<1><default><default><default>
-gpio_pin_4 = port:PI3<1><default><default><default>
-#
+gpio_pin_4 = port:PI03<1><default><default><default>
 gpio_pin_5 = port:PB22<1><default><default><default>
-#
 gpio_pin_6 = port:PB23<1><default><default><default>
 gpio_pin_7 = port:PI14<1><default><default><default>
 gpio_pin_8 = port:PI10<1><default><default><default>
 gpio_pin_9 = port:PI13<1><default><default><default>
 gpio_pin_10 = port:PI12<1><default><default><default>
 gpio_pin_11 = port:PI11<1><default><default><default>
-#
-gpio_pin_12 = port:PH5<1><default><default><default>
-#
-gpio_pin_13 = port:PH3<1><default><default><default>
-gpio_pin_14 = port:PH0<1><default><default><default>
-gpio_pin_15 = port:PH1<1><default><default><default>
-gpio_pin_16 = port:PH1<1><default><default><default>
+gpio_pin_12 = port:PH05<1><default><default><default>
+gpio_pin_13 = port:PH03<1><default><default><default>
+gpio_pin_14 = port:PH00<1><default><default><default>
+gpio_pin_15 = port:PH01<1><default><default><default>
+gpio_pin_16 = port:PH01<1><default><default><default>
 gpio_pin_17 = port:PI19<1><default><default><default>
-gpio_pin_18 = port:PH2<1><default><default><default>
-gpio_pin_19 = port:PH2<1><default><default><default>
+gpio_pin_18 = port:PH02<1><default><default><default>
+gpio_pin_19 = port:PH02<1><default><default><default>
 gpio_pin_20 = port:PI20<1><default><default><default>
 gpio_pin_21 = port:PI21<1><default><default><default>
 gpio_pin_22 = port:PI17<1><default><default><default>
@@ -331,44 +348,41 @@ gpio_pin_24 = port:PH21<1><default><default><default>
 gpio_pin_25 = port:PI16<1><default><default><default>
 gpio_pin_26 = port:PI16<1><default><default><default>
 gpio_pin_27 = port:PI18<1><default><default><default>
-#
-gpio_pin_28 = port:PH5<1><default><default><default>
+gpio_pin_28 = port:PH05<1><default><default><default>
 gpio_pin_29 = port:PI21<1><default><default><default>
-gpio_pin_30 = port:PH3<1><default><default><default>
+gpio_pin_30 = port:PH03<1><default><default><default>
 gpio_pin_31 = port:PI20<1><default><default><default>
-#CSI
 gpio_pin_32 = port:PH17<1><default><default><default>
 gpio_pin_33 = port:PB19<1><default><default><default>
 gpio_pin_34 = port:PB18<1><default><default><default>
 gpio_pin_35 = port:PH19<1><default><default><default>
-gpio_pin_36 = port:PE0<1><default><default><default>
+gpio_pin_36 = port:PE00<1><default><default><default>
 gpio_pin_37 = port:PH16<1><default><default><default>
-gpio_pin_38 = port:PE1<1><default><default><default>
+gpio_pin_38 = port:PE01<1><default><default><default>
 gpio_pin_39 = port:PH14<1><default><default><default>
-gpio_pin_40 = port:PE3<1><default><default><default>
-gpio_pin_41 = port:PE2<1><default><default><default>
+gpio_pin_40 = port:PE03<1><default><default><default>
+gpio_pin_41 = port:PE02<1><default><default><default>
 gpio_pin_42 = port:PH18<1><default><default><default>
 gpio_pin_43 = port:PH11<1><default><default><default>
-gpio_pin_44 = port:PE4<1><default><default><default>
-gpio_pin_45 = port:PE5<1><default><default><default>
-gpio_pin_46 = port:PE6<1><default><default><default>
-gpio_pin_47 = port:PE7<1><default><default><default>
-gpio_pin_48 = port:PE8<1><default><default><default>
-gpio_pin_49 = port:PE9<1><default><default><default>
+gpio_pin_44 = port:PE04<1><default><default><default>
+gpio_pin_45 = port:PE05<1><default><default><default>
+gpio_pin_46 = port:PE06<1><default><default><default>
+gpio_pin_47 = port:PE07<1><default><default><default>
+gpio_pin_48 = port:PE08<1><default><default><default>
+gpio_pin_49 = port:PE09<1><default><default><default>
 gpio_pin_50 = port:PE10<1><default><default><default>
 gpio_pin_51 = port:PE11<1><default><default><default>
 gpio_pin_52 = port:PH13<1><default><default><default>
-#DSI
-gpio_pin_53 = port:PI1<1><default><default><default>
-gpio_pin_54 = port:PI0<1><default><default><default>
-gpio_pin_55 = port:PH7<1><default><default><default>
-gpio_pin_56 = port:PH8<1><default><default><default>
-gpio_pin_57 = port:PB2<1><default><default><default>
-gpio_pin_58 = port:PH9<1><default><default><default>
+gpio_pin_53 = port:PI01<1><default><default><default>
+gpio_pin_54 = port:PI00<1><default><default><default>
+gpio_pin_55 = port:PH07<1><default><default><default>
+gpio_pin_56 = port:PH08<1><default><default><default>
+gpio_pin_57 = port:PB02<1><default><default><default>
+gpio_pin_58 = port:PH09<1><default><default><default>
 gpio_pin_59 = port:PD25<1><default><default><default>
 gpio_pin_60 = port:PD27<1><default><default><default>
 gpio_pin_61 = port:PD26<1><default><default><default>
-gpio_pin_62 = port:PH6<1><default><default><default>
+gpio_pin_62 = port:PH06<1><default><default><default>
 gpio_pin_63 = port:PD24<1><default><default><default>
 gpio_pin_64 = port:PD23<1><default><default><default>
 gpio_pin_65 = port:PD22<1><default><default><default>
@@ -378,18 +392,17 @@ gpio_pin_68 = port:PD19<1><default><default><default>
 gpio_pin_69 = port:PD18<1><default><default><default>
 gpio_pin_70 = port:PD17<1><default><default><default>
 gpio_pin_71 = port:PD16<1><default><default><default>
-#
 gpio_pin_72 = port:PH12<1><default><default><default>
-gpio_pin_73 = port:PD0<1><default><default><default>
-gpio_pin_74 = port:PD1<1><default><default><default>
-gpio_pin_75 = port:PD2<1><default><default><default>
-gpio_pin_76 = port:PD3<1><default><default><default>
-gpio_pin_77 = port:PD4<1><default><default><default>
-gpio_pin_78 = port:PD5<1><default><default><default>
-gpio_pin_79 = port:PD6<1><default><default><default>
-gpio_pin_80 = port:PD7<1><default><default><default>
-gpio_pin_81 = port:PD8<1><default><default><default>
-gpio_pin_82 = port:PD9<1><default><default><default>
+gpio_pin_73 = port:PD00<1><default><default><default>
+gpio_pin_74 = port:PD01<1><default><default><default>
+gpio_pin_75 = port:PD02<1><default><default><default>
+gpio_pin_76 = port:PD03<1><default><default><default>
+gpio_pin_77 = port:PD04<1><default><default><default>
+gpio_pin_78 = port:PD05<1><default><default><default>
+gpio_pin_79 = port:PD06<1><default><default><default>
+gpio_pin_80 = port:PD07<1><default><default><default>
+gpio_pin_81 = port:PD08<1><default><default><default>
+gpio_pin_82 = port:PD09<1><default><default><default>
 gpio_pin_83 = port:PD10<1><default><default><default>
 gpio_pin_84 = port:PD11<1><default><default><default>
 gpio_pin_85 = port:PD12<1><default><default><default>
@@ -602,39 +615,15 @@ dac3_src = 0
 [hdmi_para]
 hdmi_used = 1
 
-[camera_list_para]
-camera_list_para_used = 0
-ov7670 = 0
-gc0308 = 1
-gt2005 = 1
-hi704 = 0
-sp0838 = 0
-mt9m112 = 0
-mt9m113 = 0
-ov2655 = 0
-hi253 = 0
-gc0307 = 0
-mt9d112 = 0
-ov5640 = 0
-gc2015 = 0
-ov2643 = 0
-gc0329 = 0
-gc0309 = 0
-tvp5150 = 0
-s5k4ec = 0
-ov5650_mv9335 = 0
-siv121d = 0
-gc2035 = 0
-
 [csi0_para]
-csi_used = 0
-csi_dev_qty = 2
+csi_used = 1
+csi_dev_qty = 1
 csi_stby_mode = 0
-csi_mname = "gc0308"
+csi_mname = "ov5640"
 csi_twi_id = 1
-csi_twi_addr = 0x42
+csi_twi_addr = 0x78
 csi_if = 0
-csi_vflip = 0
+csi_vflip = 1
 csi_hflip = 0
 csi_iovdd = "axp20_pll"
 csi_avdd = ""
@@ -643,19 +632,6 @@ csi_vol_iovdd = 2800
 csi_vol_dvdd =
 csi_vol_avdd =
 csi_flash_pol = 0
-csi_mname_b = "gt2005"
-csi_twi_id_b = 1
-csi_twi_addr_b = 0x78
-csi_if_b = 0
-csi_vflip_b = 0
-csi_hflip_b = 0
-csi_iovdd_b = "axp20_pll"
-csi_avdd_b = ""
-csi_dvdd_b = ""
-csi_vol_iovdd_b = 2800
-csi_vol_avdd_b =
-csi_vol_dvdd_b =
-csi_flash_pol_b = 0
 csi_pck = port:PE00<3><default><default><default>
 csi_ck = port:PE01<3><default><default><default>
 csi_hsync = port:PE02<3><default><default><default>
@@ -669,15 +645,10 @@ csi_d5 = port:PE09<3><default><default><default>
 csi_d6 = port:PE10<3><default><default><default>
 csi_d7 = port:PE11<3><default><default><default>
 csi_reset = port:PH14<1><default><default><0>
-csi_power_en = port:PH17<1><default><default><0>
+csi_power_en = port:PH16<1><default><default><0>
 csi_stby = port:PH19<1><default><default><0>
 csi_flash =
 csi_af_en =
-csi_reset_b = port:PH14<1><default><default><0>
-csi_power_en_b = port:PH17<1><default><default><0>
-csi_stby_b = port:PH18<1><default><default><0>
-csi_flash_b =
-csi_af_en_b =
 
 [csi1_para]
 csi_used = 0
@@ -712,6 +683,30 @@ csi_d7 = port:PG11<3><default><default><default>
 csi_reset = port:PH13<1><default><default><0>
 csi_power_en = port:PH16<1><default><default><0>
 csi_stby = port:PH19<1><default><default><0>
+
+[camera_list_para]
+camera_list_para_used = 1
+ov7670 = 0
+gc0308 = 0
+gt2005 = 0
+hi704 = 0
+sp0838 = 0
+mt9m112 = 0
+mt9m113 = 0
+ov2655 = 0
+hi253 = 0
+gc0307 = 0
+mt9d112 = 0
+ov5640 = 1
+gc2015 = 0
+ov2643 = 0
+gc0329 = 0
+gc0309 = 0
+tvp5150 = 0
+s5k4ec = 0
+ov5650_mv9335 = 0
+siv121d = 0
+gc2035 = 0
 
 [tvout_para]
 tvout_used = 0
@@ -1008,15 +1003,11 @@ switch_used = 0
 
 [leds_para]
 leds_used = 1
-leds_num = 2
-leds_pin_1 = port:PH20<1><default><default><0>
-leds_name_1 = "green:ph20:led1"
+leds_num = 1
+leds_pin_1 = port:PH24<1><default><default><0>
+leds_name_1 = "green:ph24:led1"
 leds_default_1 = 1
-leds_trigger_1 = "mmc0"
-leds_pin_2 = port:PH21<1><default><default><0>
-leds_name_2 = "blue:ph21:led2"
-leds_default_2 = 0
-leds_trigger_2 = "heartbeat"
+leds_trigger_1 = "heartbeat"
 
 [ir_para]
 ir_used = 1
@@ -1100,3 +1091,8 @@ LV4_freq = 720000000
 LV4_volt = 1200
 LV5_freq = 528000000
 LV5_volt = 1100
+LV6_freq = 312000000
+LV6_volt = 1050
+LV7_freq = 144000000
+LV7_volt = 1050
+
