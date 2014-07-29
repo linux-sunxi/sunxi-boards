@@ -12,7 +12,8 @@ dcdc3_vol = 1250
 ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
-storage_type = 0
+power_start = 0
+storage_type = -1
 
 [clock]
 pll3 = 297
@@ -98,27 +99,6 @@ dram_emr3 = 0x0
 mali_used = 1
 mali_clkdiv = 1
 
-[emac_para]
-emac_used = 0
-emac_rxd3 = port:PA00<2><default><default><default>
-emac_rxd2 = port:PA01<2><default><default><default>
-emac_rxd1 = port:PA02<2><default><default><default>
-emac_rxd0 = port:PA03<2><default><default><default>
-emac_txd3 = port:PA04<2><default><default><default>
-emac_txd2 = port:PA05<2><default><default><default>
-emac_txd1 = port:PA06<2><default><default><default>
-emac_txd0 = port:PA07<2><default><default><default>
-emac_rxclk = port:PA08<2><default><default><default>
-emac_rxerr = port:PA09<2><default><default><default>
-emac_rxdV = port:PA10<2><default><default><default>
-emac_mdc = port:PA11<2><default><default><default>
-emac_mdio = port:PA12<2><default><default><default>
-emac_txen = port:PA13<2><default><default><default>
-emac_txclk = port:PA14<2><default><default><default>
-emac_crs = port:PA15<2><default><default><default>
-emac_col = port:PA16<2><default><default><default>
-emac_reset = port:PA17<1><default><default><default>
-
 [gmac_para]
 gmac_used = 1
 gmac_rxd3 = port:PA00<5><default><3><default>
@@ -195,11 +175,9 @@ uart_cts = port:PI17<3><1><default><default>
 [uart_para3]
 uart_used = 1
 uart_port = 3
-uart_type = 4
+uart_type = 2
 uart_tx = port:PH00<4><1><default><default>
 uart_rx = port:PH01<4><1><default><default>
-uart_rts = port:PH02<4><1><default><default>
-uart_cts = port:PH03<4><1><default><default>
 
 [uart_para4]
 uart_used = 0
@@ -226,8 +204,8 @@ uart_rx = port:PA13<4><1><default><default>
 uart_used = 1
 uart_port = 7
 uart_type = 2
-uart_tx = port:PA14<4><1><default><default>
-uart_rx = port:PA15<4><1><default><default>
+uart_tx = port:PI20<3><1><default><default>
+uart_rx = port:PI21<3><1><default><default>
 
 [spi0_para]
 spi_used = 1
@@ -444,12 +422,12 @@ disp_init_enable = 1
 disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 4
-screen1_output_type = 0
-screen1_output_mode = 4
+screen1_output_type = 2
+screen1_output_mode = 11
 fb0_framebuffer_num = 2
 fb0_format = 10
 fb0_pixel_sequence = 0
-fb0_scaler_mode_enable = 0
+fb0_scaler_mode_enable = 1
 fb1_framebuffer_num = 2
 fb1_format = 10
 fb1_pixel_sequence = 0
@@ -467,22 +445,22 @@ lcd1_hue = 50
 
 [lcd0_para]
 lcd_used = 0
-lcd_x = 1024
-lcd_y = 600
-lcd_dclk_freq = 51
+lcd_x = 800
+lcd_y = 480
+lcd_dclk_freq = 33
 lcd_pwm_not_used = 0
 lcd_pwm_ch = 0
 lcd_pwm_freq = 10000
-lcd_pwm_pol = 1
+lcd_pwm_pol = 0
 lcd_max_bright = 240
 lcd_min_bright = 64
 lcd_if = 0
-lcd_hbp = 158
-lcd_ht = 1344
-lcd_vbp = 25
-lcd_vt = 1270
-lcd_vspw = 3
-lcd_hspw = 20
+lcd_hbp = 46
+lcd_ht = 1055
+lcd_vbp = 23
+lcd_vt = 1050
+lcd_vspw = 0
+lcd_hspw = 0
 lcd_hv_if = 0
 lcd_hv_smode = 0
 lcd_hv_s888_if = 0
@@ -492,17 +470,17 @@ lcd_lvds_mode = 0
 lcd_lvds_bitwidth = 0
 lcd_lvds_io_cross = 0
 lcd_cpu_if = 0
-lcd_frm = 1
-lcd_io_cfg0 = 0
+lcd_frm = 0
+lcd_io_cfg0 = 268435456
 lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
-lcd_bl_en_used = 0
+lcd_bl_en_used = 1
 lcd_bl_en = port:PH07<1><0><default><1>
-lcd_power_used = 0
+lcd_power_used = 1
 lcd_power = port:PH08<1><0><default><1>
-lcd_pwm_used = 0
+lcd_pwm_used = 1
 lcd_pwm = port:PB02<2><0><default><default>
 lcdd0 = port:PD00<2><0><default><default>
 lcdd1 = port:PD01<2><0><default><default>
@@ -570,7 +548,7 @@ lcd_bl_en_used = 0
 lcd_bl_en =
 lcd_power_used = 0
 lcd_power =
-lcd_pwm_used = 0
+lcd_pwm_used = 1
 lcd_pwm = port:PI03<2><0><default><default>
 lcd_gpio_0 =
 lcd_gpio_1 =
@@ -606,7 +584,7 @@ lcdhsync = port:PH26<2><0><default><default>
 lcdvsync = port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 0
+dac_used = 1
 dac0_src = 4
 dac1_src = 5
 dac2_src = 6
@@ -632,6 +610,7 @@ csi_vol_iovdd = 2800
 csi_vol_dvdd =
 csi_vol_avdd =
 csi_flash_pol = 0
+csi_facing = 0
 csi_pck = port:PE00<3><default><default><default>
 csi_ck = port:PE01<3><default><default><default>
 csi_hsync = port:PE02<3><default><default><default>
@@ -647,8 +626,6 @@ csi_d7 = port:PE11<3><default><default><default>
 csi_reset = port:PH14<1><default><default><0>
 csi_power_en = port:PH16<1><default><default><0>
 csi_stby = port:PH19<1><default><default><0>
-csi_flash =
-csi_af_en =
 
 [csi1_para]
 csi_used = 0
@@ -682,7 +659,7 @@ csi_d6 = port:PG10<3><default><default><default>
 csi_d7 = port:PG11<3><default><default><default>
 csi_reset = port:PH13<1><default><default><0>
 csi_power_en = port:PH16<1><default><default><0>
-csi_stby = port:PH19<1><default><default><0>
+csi_stby = port:PH18<1><default><default><0>
 
 [camera_list_para]
 camera_list_para_used = 1
@@ -709,7 +686,7 @@ siv121d = 0
 gc2035 = 0
 
 [tvout_para]
-tvout_used = 0
+tvout_used = 1
 tvout_channel_num = 1
 
 [tvin_para]
@@ -858,7 +835,7 @@ usb_restric_capacity = 5
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH06<1><0><default><0>
+usb_drv_vbus_gpio = port:PH05<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -921,21 +898,18 @@ gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
 [wifi_para]
-wifi_used = 1
+wifi_used = 0
 wifi_sdc_id = 3
 wifi_usbc_id = 2
 wifi_usbc_type = 1
 wifi_mod_sel = 6
 wifi_power = ""
-rtk_rtl8723as_wl_dis = port:PH09<1><default><default><0>
-rtk_rtl8723as_bt_dis = port:PB05<1><default><default><0>
-rtk_rtl8723as_wl_host_wake = port:PH10<0><default><default><0>
-rtk_rtl8723as_bt_host_wake = port:PI21<0><default><default><0>
 ap6xxx_wl_regon = port:PH09<1><default><default><0>
 ap6xxx_wl_host_wake = port:PH10<0><default><default><0>
-ap6xxx_bt_regon = port:PB05<1><default><default><0>
-ap6xxx_bt_wake = port:PI20<1><default><default><0>
-ap6xxx_bt_host_wake = port:PI21<0><default><default><0>
+ap6xxx_bt_regon = port:PH18<1><default><default><0>
+ap6xxx_bt_wake = port:PH24<1><default><default><0>
+ap6xxx_bt_host_wake = port:PH25<0><default><default><0>
+ap6xxx_lpo = port:PI12<4><1><default><1>
 
 [usb_wifi_para]
 usb_wifi_used = 1
@@ -1018,8 +992,8 @@ pmu_used = 1
 pmu_twi_addr = 52
 pmu_twi_id = 0
 pmu_irq_id = 32
-pmu_battery_rdc = 120
-pmu_battery_cap = 2100
+pmu_battery_rdc = 100
+pmu_battery_cap = 3200
 pmu_init_chgcur = 300
 pmu_earlysuspend_chgcur = 600
 pmu_suspend_chgcur = 1000
@@ -1037,23 +1011,23 @@ pmu_bat_para2 = 0
 pmu_bat_para3 = 0
 pmu_bat_para4 = 0
 pmu_bat_para5 = 5
-pmu_bat_para6 = 11
-pmu_bat_para7 = 13
-pmu_bat_para8 = 15
-pmu_bat_para9 = 19
-pmu_bat_para10 = 32
+pmu_bat_para6 = 8
+pmu_bat_para7 = 11
+pmu_bat_para8 = 22
+pmu_bat_para9 = 33
+pmu_bat_para10 = 43
 pmu_bat_para11 = 50
-pmu_bat_para12 = 58
+pmu_bat_para12 = 59
 pmu_bat_para13 = 71
-pmu_bat_para14 = 81
-pmu_bat_para15 = 89
+pmu_bat_para14 = 83
+pmu_bat_para15 = 92
 pmu_bat_para16 = 100
 pmu_usbvol_limit = 1
 pmu_usbcur_limit = 0
 pmu_usbvol = 4000
 pmu_usbcur = 0
-pmu_usbvol_pc = 4200
-pmu_usbcur_pc = 0
+pmu_usbvol_pc = 4400
+pmu_usbcur_pc = 500
 pmu_pwroff_vol = 3300
 pmu_pwron_vol = 2900
 pmu_pekoff_time = 4000
@@ -1063,6 +1037,7 @@ pmu_pekon_time = 1000
 pmu_pwrok_time = 64
 pmu_pwrnoe_time = 2000
 pmu_intotp_en = 1
+pmu_backupen = 1
 pmu_used2 = 0
 pmu_adpdet = port:PH02<0><default><default><default>
 pmu_init_chgcur2 = 400
@@ -1075,11 +1050,11 @@ pmu_batdeten = 1
 
 [recovery_key]
 key_min = 4
-key_max = 40
+key_max = 10
 
 [dvfs_table]
 max_freq = 912000000
-min_freq = 400000000
+min_freq = 60000000
 LV_count = 7
 LV1_freq = 1008000000
 LV1_volt = 1450
