@@ -132,7 +132,7 @@ uart_tx = port:PB19<2><1><default><default>
 uart_rx = port:PB20<2><1><default><default>
 
 [uart_para1]
-uart_used = 0
+uart_used = 1
 uart_port = 1
 uart_type = 2
 uart_tx = port:PG03<4><1><default><default>
