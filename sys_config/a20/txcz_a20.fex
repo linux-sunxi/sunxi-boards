@@ -822,6 +822,10 @@ gps_vcc_en = port:PC22<1><default><default><0>
 gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
+[usb_wifi_para]
+usb_wifi_used = 1
+usb_wifi_usbc_num = 0
+
 [wifi_para]
 wifi_used = 1
 wifi_sdc_id = 3
