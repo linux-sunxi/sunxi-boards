@@ -330,7 +330,7 @@ nand_p1 = 32435950
 
 [disp_init]
 disp_init_enable = 1
-disp_mode = 4
+disp_mode = 0
 screen0_output_type = 3
 screen0_output_mode = 5
 screen1_output_type = 1
@@ -338,25 +338,11 @@ screen1_output_mode = 4
 fb0_framebuffer_num = 2
 fb0_format = 10
 fb0_pixel_sequence = 0
-fb0_scaler_mode_enable = 1
-fb0_width = 0
-fb0_height = 0
+fb0_scaler_mode_enable = 0
 fb1_framebuffer_num = 2
 fb1_format = 10
 fb1_pixel_sequence = 0
 fb1_scaler_mode_enable = 0
-fb1_width = 0
-fb1_height = 0
-lcd0_backlight = 197
-lcd1_backlight = 197
-lcd0_bright = 50
-lcd0_contrast = 50
-lcd0_saturation = 57
-lcd0_hue = 50
-lcd1_bright = 50
-lcd1_contrast = 50
-lcd1_saturation = 57
-lcd1_hue = 50
 
 [lcd0_para]
 lcd_used = 1
