@@ -624,7 +624,7 @@ tvin_used = 0
 tvin_channel_num = 4
 
 [sata_para]
-sata_used = 1
+sata_used = 0
 sata_power_en =
 
 [mmc0_para]
