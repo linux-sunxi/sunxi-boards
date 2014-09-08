@@ -755,9 +755,11 @@ luns = 2
 
 [gsensor_para]
 gsensor_used = 1
+gsensor_name = "dmard06"
 gsensor_twi_id = 1
-gsensor_int1 =
-gsensor_int2 =
+gsensor_twi_addr = 0x1c
+gsensor_int1 = port:PH00<6><1><default><default>
+gsensor_int2 = port:PI10<6><1><default><default>
 
 [gps_para]
 gps_used = 0
@@ -783,6 +785,10 @@ ap6xxx_wl_host_wake = port:PH10<0><default><default><0>
 ap6xxx_bt_regon = port:PB05<1><default><default><0>
 ap6xxx_bt_wake = port:PI20<1><default><default><0>
 ap6xxx_bt_host_wake = port:PI21<0><default><default><0>
+
+[usb_wifi_para]
+usb_wifi_used = 1
+usb_wifi_usbc_num = 2
 
 [3g_para]
 3g_used = 0
@@ -852,7 +858,7 @@ ir_rx = port:PB04<2><default><default><default>
 pmu_used = 1
 pmu_twi_addr = 52
 pmu_twi_id = 0
-pmu_irq_id = 0
+pmu_irq_id = 32
 pmu_battery_rdc = 100
 pmu_battery_cap = 4000
 pmu_init_chgcur = 300
@@ -913,7 +919,7 @@ key_min = 4
 key_max = 40
 
 [dvfs_table]
-max_freq = 912000000
+max_freq = 1008000000
 normal_freq = 720000000
 min_freq = 60000000
 LV_count = 8
