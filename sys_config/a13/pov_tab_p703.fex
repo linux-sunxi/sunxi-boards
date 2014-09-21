@@ -32,15 +32,26 @@ sdc_cmd = port:PF03<2><1><default><default>
 sdc_d3 = port:PF04<2><1><default><default>
 sdc_d2 = port:PF05<2><1><default><default>
 
+[card_boot2_para]
+card_ctrl = 2
+card_high_speed = 1
+card_line = 4
+sdc_d1 = port:PC00<3><1><default><default>
+sdc_d0 = port:PC01<3><1><default><default>
+sdc_clk = port:PC02<3><1><default><default>
+sdc_cmd = port:PC03<3><1><default><default>
+sdc_d3 = port:PC04<3><1><default><default>
+sdc_d2 = port:PC05<3><1><default><default>
+
 [twi_para]
 twi_port = 0
 twi_scl = port:PB00<2><1><default><default>
 twi_sda = port:PB01<2><1><default><default>
 
 [uart_para]
-uart_debug_port = 0
-uart_debug_tx = port:PB19<2><1><default><default>
-uart_debug_rx = port:PB20<2><1><default><default>
+uart_debug_port = 1
+uart_debug_tx = port:PG03<4><1><default><default>
+uart_debug_rx = port:PG04<4><1><default><default>
 
 [uart_force_debug]
 uart_debug_port = 0
@@ -56,14 +67,14 @@ jtag_di = port:PF01<4><1><default><default>
 
 [dram_para]
 dram_baseaddr = 0x40000000
-dram_clk = 384
+dram_clk = 360
 dram_type = 3
 dram_rank_num = 1
 dram_chip_density = 2048
 dram_io_width = 8
 dram_bus_width = 16
 dram_cas = 9
-dram_zq = 0x79
+dram_zq = 0x7b
 dram_odt_en = 1
 dram_size = 512
 dram_tpr0 = 0x42d899b7
@@ -125,7 +136,7 @@ twi2_scl = port:PB17<2><default><default><default>
 twi2_sda = port:PB18<2><default><default><default>
 
 [uart_para0]
-uart_used = 1
+uart_used = 0
 uart_port = 0
 uart_type = 2
 uart_tx = port:PB19<2><1><default><default>
@@ -155,8 +166,8 @@ spi_miso = port:PB03<4><default><default><default>
 
 [rtp_para]
 rtp_used = 0
-rtp_screen_size = 7
-rtp_regidity_level = 7
+rtp_screen_size = 5
+rtp_regidity_level = 5
 rtp_press_threshold_enable = 0
 rtp_press_threshold = 0x1f40
 rtp_sensitive_level = 0xf
@@ -164,17 +175,18 @@ rtp_exchange_x_y_flag = 0
 
 [ctp_para]
 ctp_used = 1
-ctp_name = "ekt3632"
+ctp_name = "ft5x_ts"
 ctp_twi_id = 1
-ctp_twi_addr = 0x15
+ctp_twi_addr = 0x3f
 ctp_screen_max_x = 800
 ctp_screen_max_y = 480
-ctp_revert_x_flag = 0
+ctp_revert_x_flag = 1
 ctp_revert_y_flag = 0
 ctp_exchange_x_y_flag = 0
-ctp_int_port = port:PG11<6><1><default><default>
+ctp_int_port = port:PG11<6><default><default><default>
 ctp_wakeup = port:PB03<1><default><default><1>
-ctp_reset = port:PB03<1><default><default><1>
+ctp_io_port = port:PG11<0><default><default><default>
+ctp_light = port:PA05<1><default><default><0>
 
 [tkey_para]
 tkey_used = 0
@@ -184,8 +196,8 @@ tkey_twi_addr = 0x62
 tkey_int =
 
 [motor_para]
-motor_used = 1
-motor_shake = port:PG09<1><default><default><0>
+motor_used = 0
+motor_shake =
 
 [disp_init]
 disp_init_enable = 1
@@ -213,9 +225,9 @@ lcd_pwm_ch = 0
 lcd_pwm_freq = 18000
 lcd_pwm_pol = 1
 lcd_if = 0
-lcd_hbp = 88
-lcd_ht = 928
-lcd_vbp = 32
+lcd_hbp = 46
+lcd_ht = 1056
+lcd_vbp = 23
 lcd_vt = 1050
 lcd_hv_if = 0
 lcd_hv_smode = 0
@@ -281,12 +293,44 @@ dac0_src = 0
 [hdmi_para]
 hdmi_used = 0
 
+[camera_list_para]
+ov7670 = 0
+gc0308 = 1
+gt2005 = 0
+hi704 = 0
+sp0838 = 0
+mt9m112 = 0
+mt9m113 = 0
+ov2655 = 0
+hi253 = 0
+gc0307 = 0
+mt9d112 = 0
+ov5640 = 0
+ov2643 = 0
+gc0329 = 1
+gc0309 = 1
+tvp5150 = 0
+s5k4ec = 0
+ov5650_mv9335 = 0
+siv121d = 1
+gc03082 = 0
+gc03092 = 0
+siv121d2 = 0
+hi7042 = 0
+gc2035 = 1
+gc2015 = 1
+gc0311 = 0
+sp0a19 = 0
+gc0328 = 0
+ov7680 = 0
+siv120d = 1
+
 [csi0_para]
 csi_used = 1
 csi_mode = 0
-csi_dev_qty = 2
+csi_dev_qty = 1
 csi_stby_mode = 1
-csi_mname = "gc0308"
+csi_mname = "aaaaaa"
 csi_twi_id = 2
 csi_twi_addr = 0x42
 csi_if = 0
@@ -296,9 +340,10 @@ csi_iovdd = ""
 csi_avdd = ""
 csi_dvdd = ""
 csi_flash_pol = 1
-csi_mname_b = "gc0308"
+csi_facing = 1
+csi_mname_b = "bbbbbb"
 csi_twi_id_b = 2
-csi_twi_addr_b = 0x42
+csi_twi_addr_b = 0x46
 csi_if_b = 0
 csi_vflip_b = 0
 csi_hflip_b = 0
@@ -306,6 +351,7 @@ csi_iovdd_b = ""
 csi_avdd_b = ""
 csi_dvdd_b = ""
 csi_flash_pol_b = 1
+csi_facing_b = 1
 csi_pck = port:PE00<3><default><default><default>
 csi_ck = port:PE01<3><default><default><default>
 csi_hsync = port:PE02<3><default><default><default>
@@ -319,13 +365,13 @@ csi_d5 = port:PE09<3><default><default><default>
 csi_d6 = port:PE10<3><default><default><default>
 csi_d7 = port:PE11<3><default><default><default>
 csi_reset = port:power3<1><default><default><0>
-csi_power_en =
+csi_power_en = port:power2<1><default><default><0>
 csi_stby = port:PB10<1><default><default><1>
-csi_flash = port:PG03<1><default><default><0>
+csi_flash = port:PG09<1><default><default><0>
 csi_af_en =
 csi_reset_b = port:power3<1><default><default><0>
-csi_power_en_b =
-csi_stby_b = port:PB04<1><default><default><1>
+csi_power_en_b = port:power2<1><default><default><0>
+csi_stby_b = port:PB10<1><default><default><1>
 csi_flash_b =
 csi_af_en_b =
 
@@ -344,6 +390,7 @@ csi_iovdd = ""
 csi_avdd = ""
 csi_dvdd = ""
 csi_flash_pol = 1
+csi_facing = 0
 csi_mname_b = ""
 csi_twi_id_b = 1
 csi_twi_addr_b = 0x78
@@ -354,6 +401,7 @@ csi_iovdd_b = ""
 csi_avdd_b = ""
 csi_dvdd_b = ""
 csi_flash_pol_b = 1
+csi_facing_b = 1
 csi_reset =
 csi_power_en =
 csi_stby =
@@ -454,8 +502,19 @@ usb_detect_type = 0
 usb_controller_type = 0
 usb_id_gpio =
 usb_det_vbus_gpio =
-usb_drv_vbus_gpio = port:PG11<1><0><default><0>
-usb_host_init_state = 1
+usb_drv_vbus_gpio = port:power203<1><0><default><0>
+usb_host_init_state = 0
+
+[port_pm]
+restrict_1a = 1
+restrict_500ma = 1
+v_1a = 3630000
+c_1a = 5
+v_500ma = 3440000
+c_500ma = 5
+v_disable = 3250000
+c_disable = 5
+ctrl_gpio = port:PF04<1><0><default><0>
 
 [usb_feature]
 vendor_id = 6353
@@ -463,7 +522,7 @@ mass_storage_id = 1
 adb_id = 2
 manufacturer_name = "USB Developer"
 product_name = "Android"
-serial_number = "20080411"
+serial_number = "20111101"
 
 [msc_feature]
 vendor_name = "USB 2.0"
@@ -473,11 +532,21 @@ luns = 2
 
 [gsensor_para]
 gsensor_used = 1
-gsensor_name = "mma7660"
-gsensor_twi_id = 1
-gsensor_twi_addr = 0x4c
-gsensor_int1 =
-gsensor_int2 =
+gsensor_twi_id = 2
+
+[gsensor_list_para]
+gsensor_det_used = 1
+bma250 = 0
+mc32x0 = 1
+dmard06 = 0
+mma8452 = 0
+kxtik = 0
+mxc622x = 1
+afa750 = 1
+mma865x = 0
+lis3dh = 0
+mma7660 = 0
+dmard10 = 1
 
 [gps_para]
 gps_used = 0
@@ -518,8 +587,8 @@ gy_int1 =
 gy_int2 =
 
 [ls_para]
-ls_used = 1
-ls_name = "ltr501als"
+ls_used = 0
+ls_name = "ltr501"
 ls_twi_id = 1
 ls_twi_addr =
 ls_int =
@@ -630,8 +699,8 @@ pmu_suspendpwroff_vol = 3500
 pmu_batdeten = 1
 
 [recovery_key]
-key_min = 4
-key_max = 6
+key_min = 3
+key_max = 7
 
 [dvfs_table]
 max_freq = 1008000000
@@ -648,7 +717,97 @@ LV4_volt = 1300
 LV5_freq = 624000000
 LV5_volt = 1200
 LV6_freq = 576000000
-LV6_volt = 1200
+LV6_volt = 1400
 LV7_freq = 432000000
-LV7_volt = 1200
+LV7_volt = 1300
+
+[suzhiguo]
+szg_gps_used = 1
+ethernet_used = 1
+passwd = 0
+autoko = 1
+adc_keypad_used = 0
+gpio_keypad_used = 0
+
+[szgdefault]
+FwVer = "1.2"
+ProductModel = "crane-evb"
+ProductBrand = "junyue"
+timezone = "Asia/Shanghai"
+language = "zh"
+country = "CN"
+downloadurl = "http://www.day-wish.com/Upload/DownFiles/"
+
+[autotp0]
+tpaddr = 63
+tpname = "ft5x_ts"
+tpreset = 0
+tpdelay = 800
+tpreg = 9
+tpvaule = 0
+tpupdate = 0
+
+[autotp1]
+tpaddr = 93
+tpname = "goodix811"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 0
+
+[autotp2]
+tpaddr = 72
+tpname = "ssd253x-ts"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 0
+
+[autotp3]
+tpaddr = 1
+tpname = "ct360_ts"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 0
+
+[autotp4]
+tpaddr = 21
+tpname = "elan_ts"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 1
+
+[autotp5]
+tpaddr = 64
+tpname = "gslx680"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 0
+tpselect = 0
+
+[autotp6]
+tpaddr = 93
+tpname = "gt828_ts"
+tpreset = 0
+tpdelay = 200
+tpreg = 0
+tpvaule = 0
+tpupdate = 0
+
+[autotp7]
+tpaddr = 56
+tpname = "ft5x_38"
+tpreset = 0
+tpdelay = 800
+tpreg = 9
+tpvaule = 0
+tpupdate = 0
 
