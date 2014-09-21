@@ -1,6 +1,6 @@
 [product]
 version = "100"
-machine = "mid-v10"
+machine = "wing-sc3062"
 
 [platform]
 eraseflag = 1
@@ -13,7 +13,7 @@ ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
 power_start = 0
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
@@ -75,16 +75,16 @@ standby_mode = 0
 
 [dram_para]
 dram_baseaddr = 0x40000000
-dram_clk = 384
+dram_clk = 432
 dram_type = 3
-dram_rank_num = -1
-dram_chip_density = -1
-dram_io_width = -1
-dram_bus_width = -1
+dram_rank_num = 1
+dram_chip_density = 2048
+dram_io_width = 16
+dram_bus_width = 32
 dram_cas = 9
-dram_zq = 0x7f
-dram_odt_en = 1
-dram_size = -1
+dram_zq = 0x7b
+dram_odt_en = 0
+dram_size = 512
 dram_tpr0 = 0x42d899b7
 dram_tpr1 = 0xa090
 dram_tpr2 = 0x22a00
@@ -98,6 +98,8 @@ dram_emr3 = 0x0
 [mali_para]
 mali_used = 1
 mali_clkdiv = 1
+mali_normal_freq = 192
+mali_min_freq = 192
 
 [emac_para]
 emac_used = 0
@@ -156,7 +158,7 @@ uart_dcd = port:PA16<4><1><default><default>
 uart_ring = port:PA17<4><1><default><default>
 
 [uart_para2]
-uart_used = 0
+uart_used = 1
 uart_port = 2
 uart_type = 4
 uart_tx = port:PI18<3><1><default><default>
@@ -191,15 +193,15 @@ uart_rx = port:PH07<4><1><default><default>
 uart_used = 0
 uart_port = 6
 uart_type = 2
-uart_tx = port:PA12<4><1><default><default>
-uart_rx = port:PA13<4><1><default><default>
+uart_tx = port:PA12<3><1><default><default>
+uart_rx = port:PA13<3><1><default><default>
 
 [uart_para7]
 uart_used = 0
 uart_port = 7
 uart_type = 2
-uart_tx = port:PA14<4><1><default><default>
-uart_rx = port:PA15<4><1><default><default>
+uart_tx = port:PA14<3><1><default><default>
+uart_rx = port:PA15<3><1><default><default>
 
 [spi0_para]
 spi_used = 0
@@ -239,21 +241,28 @@ spi_miso = port:PA08<3><default><default><default>
 
 [ctp_para]
 ctp_used = 1
-ctp_name = "Goodix-TS"
-gt911_update_file_path = "/system/etc/gt911_A20_TAB7200_XFTP_800_480_20130520.cfg"
+ctp_name = "gsl1680_1"
 ctp_twi_id = 2
-ctp_twi_addr = 0x5d
+ctp_twi_addr = 0x40
 ctp_screen_max_x = 800
 ctp_screen_max_y = 480
-ctp_revert_x_flag = 0
+ctp_revert_x_flag = 1
 ctp_revert_y_flag = 0
-ctp_exchange_x_y_flag = 0
+ctp_exchange_x_y_flag = 1
 ctp_int_port = port:PH21<6><default><default><default>
-ctp_wakeup = port:PB13<1><default><default><1>
+ctp_wakeup = port:PH20<1><default><default><1>
+
+[ctp_list_para]
+ctp_det_used = 1
+ft5x_ts = 1
+gt82x = 1
+gslX680 = 1
+gt9xx_ts = 1
+gt811 = 1
+zet622x = 1
 
 [tkey_para]
 tkey_used = 0
-tkey_name = "hv_keypad"
 tkey_twi_id = 2
 tkey_twi_addr = 0x62
 tkey_int = port:PI13<6><default><default><default>
@@ -289,7 +298,7 @@ nand_ce6 =
 nand_ce7 =
 nand_spi = port:PC23<3><default><default><default>
 nand_ndqs = port:PC24<2><default><default><default>
-good_block_ratio = 0
+good_block_ratio = 840
 
 [disp_init]
 disp_init_enable = 1
@@ -300,12 +309,16 @@ screen1_output_type = 1
 screen1_output_mode = 4
 fb0_framebuffer_num = 2
 fb0_format = 10
-fb0_pixel_sequence = 2
+fb0_pixel_sequence = 0
 fb0_scaler_mode_enable = 0
+fb0_width = 0
+fb0_height = 0
 fb1_framebuffer_num = 2
 fb1_format = 10
-fb1_pixel_sequence = 2
+fb1_pixel_sequence = 0
 fb1_scaler_mode_enable = 0
+fb1_width = 0
+fb1_height = 0
 lcd0_backlight = 197
 lcd1_backlight = 197
 lcd0_bright = 50
@@ -321,43 +334,44 @@ lcd1_hue = 50
 lcd_used = 1
 lcd_x = 800
 lcd_y = 480
-lcd_dclk_freq = 33
+lcd_width = 155
+lcd_height = 85
+lcd_dclk_freq = 40
 lcd_pwm_not_used = 0
 lcd_pwm_ch = 0
-lcd_pwm_freq = 18000
+lcd_pwm_freq = 10000
 lcd_pwm_pol = 1
 lcd_if = 0
-lcd_hbp = 46
-lcd_ht = 1056
-lcd_vbp = 23
-lcd_vt = 1050
+lcd_hbp = 88
+lcd_ht = 1000
+lcd_vbp = 39
+lcd_vt = 1320
+lcd_vspw = 0
+lcd_hspw = 0
 lcd_hv_if = 0
 lcd_hv_smode = 0
 lcd_hv_s888_if = 0
 lcd_hv_syuv_if = 0
-lcd_hv_vspw = 0
-lcd_hv_hspw = 0
 lcd_lvds_ch = 0
 lcd_lvds_mode = 0
 lcd_lvds_bitwidth = 0
 lcd_lvds_io_cross = 0
 lcd_cpu_if = 0
-lcd_frm = 0
+lcd_frm = 1
 lcd_io_cfg0 = 268435456
 lcd_gamma_correction_en = 0
 lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
+lcd_bl_min = 25
+lcd_bl_max = 150
 lcd_bl_en_used = 1
 lcd_bl_en = port:PH07<1><0><default><1>
+lcd_bl_max = 150
 lcd_power_used = 1
 lcd_power = port:PH08<1><0><default><1>
 lcd_pwm_used = 1
-lcd_pwm = port:PB02<2><default><default><default>
-lcd_gpio_0 =
-lcd_gpio_1 =
-lcd_gpio_2 =
-lcd_gpio_3 =
+lcd_pwm = port:PB02<2><0><default><default>
 lcdd0 = port:PD00<2><0><default><default>
 lcdd1 = port:PD01<2><0><default><default>
 lcdd2 = port:PD02<2><0><default><default>
@@ -466,24 +480,45 @@ dac3_src = 0
 
 [hdmi_para]
 hdmi_used = 1
+hdcp_enable = 0
+
+[i2s2_para]
+i2s_channel = 2
+i2s_master = 4
+i2s_select = 1
+audio_format = 1
+signal_inversion = 1
+over_sample_rate = 256
+sample_resolution = 16
+word_select_size = 32
+pcm_sync_period = 256
+msb_lsb_first = 0
+sign_extend = 0
+slot_index = 0
+slot_width = 16
+frame_width = 1
+tx_data_mode = 0
+rx_data_mode = 0
 
 [camera_list_para]
 camera_list_para_used = 1
 ov7670 = 0
-gc0308 = 1
+gc0308 = 0
 gt2005 = 0
 hi704 = 0
 sp0838 = 0
 mt9m112 = 0
 mt9m113 = 0
+gc2035 = 0
 ov2655 = 0
 hi253 = 0
 gc0307 = 0
 mt9d112 = 0
-ov5640 = 1
+ov5640 = 0
 gc2015 = 0
 ov2643 = 0
-gc0329 = 0
+gc0329 = 1
+gc0328 = 0
 gc0309 = 0
 tvp5150 = 0
 s5k4ec = 0
@@ -492,20 +527,23 @@ siv121d = 0
 
 [csi0_para]
 csi_used = 1
-csi_mode = 0
 csi_dev_qty = 1
-csi_stby_mode = 1
-csi_mname = "gc0308"
+csi_stby_mode = 0
+csi_mname = "gc0329"
 csi_twi_id = 1
-csi_twi_addr = 0x42
+csi_twi_addr = 0x62
 csi_if = 0
 csi_vflip = 0
-csi_hflip = 0
-csi_iovdd = ""
-csi_avdd = ""
+csi_hflip = 1
+csi_iovdd = "axp20_hdmi"
+csi_avdd = "axp20_pll"
 csi_dvdd = ""
-csi_flash_pol = 1
-csi_mname_b = "gc0308"
+csi_vol_iovdd = 2800
+csi_vol_dvdd =
+csi_vol_avdd = 2800
+csi_flash_pol = 0
+csi_facing = 0
+csi_mname_b = ""
 csi_twi_id_b = 1
 csi_twi_addr_b = 0x42
 csi_if_b = 0
@@ -530,14 +568,14 @@ csi_d4 = port:PE08<3><default><default><default>
 csi_d5 = port:PE09<3><default><default><default>
 csi_d6 = port:PE10<3><default><default><default>
 csi_d7 = port:PE11<3><default><default><default>
-csi_reset = port:PH13<1><default><default><0>
-csi_power_en = port:PH16<1><default><default><0>
+csi_reset = port:PH13<1><default><default><1>
+csi_power_en = port:PH16<1><default><default><1>
 csi_stby = port:PH19<1><default><default><0>
 csi_flash =
 csi_af_en =
-csi_reset_b = port:PH13<1><default><default><0>
-csi_power_en_b =
-csi_stby_b = port:PH18<1><default><default><0>
+csi_reset_b = port:PH14<1><default><default><0>
+csi_power_en_b = port:PH17<1><default><default><0>
+csi_stby_b = port:PH19<1><default><default><1>
 csi_flash_b =
 csi_af_en_b =
 
@@ -548,7 +586,7 @@ csi_stby_mode = 0
 csi_mname = "gc0308"
 csi_if = 0
 csi_iovdd = "axp20_pll"
-csi_avdd = ""
+csi_avdd = "axp20_pll"
 csi_dvdd = ""
 csi_vol_iovdd = 2800
 csi_vol_dvdd =
@@ -571,9 +609,9 @@ csi_d4 = port:PG08<3><default><default><default>
 csi_d5 = port:PG09<3><default><default><default>
 csi_d6 = port:PG10<3><default><default><default>
 csi_d7 = port:PG11<3><default><default><default>
-csi_reset = port:PH13<1><default><default><0>
-csi_power_en = port:PH16<1><default><default><0>
-csi_stby = port:PH19<1><default><default><0>
+csi_reset = port:PH14<1><default><default><0>
+csi_power_en = port:PH17<1><default><default><0>
+csi_stby = port:PH19<1><default><default><1>
 
 [tvout_para]
 tvout_used = 1
@@ -636,7 +674,7 @@ sdc_isio = 0
 sdc_regulator = "none"
 
 [mmc3_para]
-sdc_used = 0
+sdc_used = 1
 sdc_detmode = 4
 sdc_buswidth = 4
 sdc_cmd = port:PI04<2><1><2><default>
@@ -736,7 +774,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
 usb_restrict_gpio =
-usb_host_init_state = 0
+usb_host_init_state = 1
 usb_restric_flag = 0
 
 [usb_feature]
@@ -748,18 +786,32 @@ product_name = "Android"
 serial_number = "20080411"
 
 [msc_feature]
-vendor_name = "USB 2.0"
-product_name = "USB Flash Driver"
+vendor_name = "Numy_3G_AW1"
+product_name = ""
 release = 100
 luns = 2
 
 [gsensor_para]
 gsensor_used = 1
-gsensor_name = "dmard06"
 gsensor_twi_id = 1
-gsensor_twi_addr = 0x1c
-gsensor_int1 = port:PH00<6><1><default><default>
-gsensor_int2 = port:PI10<6><1><default><default>
+gsensor_int1 =
+gsensor_int2 =
+
+[gsensor_list_para]
+gsensor_det_used = 1
+bma250 = 1
+mma8452 = 1
+mma7660 = 1
+mma865x = 1
+afa750 = 1
+lis3de_acc = 1
+lis3dh_acc = 1
+kxtik = 1
+dmard10 = 0
+dmard06 = 1
+mxc622x = 1
+fxos8700 = 1
+lsm303d = 1
 
 [gps_para]
 gps_used = 0
@@ -778,24 +830,32 @@ wifi_used = 1
 wifi_sdc_id = 3
 wifi_usbc_id = 2
 wifi_usbc_type = 1
-wifi_mod_sel = 6
+wifi_mod_sel = 7
 wifi_power = ""
+rtk_rtl8723as_wl_dis = port:PH09<1><default><default><0>
+rtk_rtl8723as_bt_dis = port:PB05<1><default><default><0>
+rtk_rtl8723as_wl_host_wake = port:PH10<0><default><default><0>
+rtk_rtl8723as_bt_host_wake = port:PI21<0><default><default><0>
+ap6xxx_lpo = port:PI12<4><default><default><0>
+ap6xxx_wl_vcc_en = port:PH12<1><default><default><1>
 ap6xxx_wl_regon = port:PH09<1><default><default><0>
 ap6xxx_wl_host_wake = port:PH10<0><default><default><0>
-ap6xxx_bt_regon = port:PB05<1><default><default><0>
+ap6xxx_bt_regon = port:PB05<1><default><default><1>
 ap6xxx_bt_wake = port:PI20<1><default><default><0>
 ap6xxx_bt_host_wake = port:PI21<0><default><default><0>
 
-[usb_wifi_para]
-usb_wifi_used = 1
-usb_wifi_usbc_num = 2
-
 [3g_para]
-3g_used = 0
+3g_used = 1
 3g_usbc_num = 2
-3g_uart_num = 0
-3g_pwr =
+3g_usbc_type = 2
+3g_uart_num =
+3g_pwen = port:PA01<1><default><default><0>
+3g_pwr = port:PA06<1><default><default><0>
 3g_wakeup =
+3g_host_wakeup = port:PA03<1><default><default><0>
+3g_bb_wakeup = port:PH02<6><default><default><default>
+3g_bt_pcm_en = port:PA00<1><default><default><0>
+3g_ap_pcm_en = port:PA04<1><default><default><0>
 3g_int =
 
 [gy_para]
@@ -818,15 +878,30 @@ compass_twi_addr = 0
 compass_int = port:PI13<6><1><default><default>
 
 [bt_para]
-bt_used = 0
+bt_used = 1
 bt_uart_id = 2
 bt_wakeup = port:PI20<1><default><default><default>
 bt_gpio = port:PI21<1><default><default><default>
 bt_rst = port:PB05<1><default><default><default>
 
 [i2s_para]
-i2s_used = 0
+i2s_used = 1
 i2s_channel = 2
+i2s_master = 1
+i2s_select = 0
+audio_format = 4
+signal_inversion = 3
+over_sample_rate = 256
+sample_resolution = 16
+word_select_size = 32
+pcm_sync_period = 256
+msb_lsb_first = 0
+sign_extend = 0
+slot_index = 0
+slot_width = 16
+frame_width = 1
+tx_data_mode = 0
+rx_data_mode = 0
 i2s_mclk = port:PB05<2><1><default><default>
 i2s_bclk = port:PB06<2><1><default><default>
 i2s_lrclk = port:PB07<2><1><default><default>
@@ -835,6 +910,33 @@ i2s_dout1 =
 i2s_dout2 =
 i2s_dout3 =
 i2s_din = port:PB12<2><1><default><default>
+
+[pcm_para]
+pcm_used = 0
+pcm_channel = 2
+pcm_master = 4
+pcm_select = 1
+audio_format = 4
+signal_inversion = 3
+over_sample_rate = 512
+sample_resolution = 16
+word_select_size = 32
+pcm_sync_period = 64
+msb_lsb_first = 0
+sign_extend = 0
+slot_index = 0
+slot_width = 16
+frame_width = 1
+tx_data_mode = 0
+rx_data_mode = 0
+pcm_mclk = port:PA09<6><1><default><default>
+pcm_bclk = port:PA14<6><1><default><default>
+pcm_lrclk = port:PA15<6><1><default><default>
+pcm_dout0 = port:PA16<6><1><default><default>
+pcm_dout1 =
+pcm_dout2 =
+pcm_dout3 =
+pcm_din = port:PA17<6><1><default><default>
 
 [spdif_para]
 spdif_used = 0
@@ -845,7 +947,7 @@ spdif_din =
 [audio_para]
 audio_used = 1
 audio_pa_ctrl = port:PH15<1><default><default><0>
-headphone_vol = 96
+mic_switch_ctrl = port:PI10<1><default><default><0>
 
 [switch_para]
 switch_used = 1
@@ -860,13 +962,13 @@ pmu_twi_addr = 52
 pmu_twi_id = 0
 pmu_irq_id = 32
 pmu_battery_rdc = 100
-pmu_battery_cap = 4000
-pmu_init_chgcur = 300
-pmu_earlysuspend_chgcur = 600
-pmu_suspend_chgcur = 1000
-pmu_resume_chgcur = 300
-pmu_shutdown_chgcur = 1000
-pmu_init_chgvol = 4200
+pmu_battery_cap = 2400
+pmu_init_chgcur = 800
+pmu_earlysuspend_chgcur = 800
+pmu_suspend_chgcur = 1200
+pmu_resume_chgcur = 800
+pmu_shutdown_chgcur = 1200
+pmu_init_chgvol = 4150
 pmu_init_chgend_rate = 15
 pmu_init_chg_enabled = 1
 pmu_init_adc_freq = 100
@@ -876,25 +978,25 @@ pmu_init_chg_csttime = 720
 pmu_bat_para1 = 0
 pmu_bat_para2 = 0
 pmu_bat_para3 = 0
-pmu_bat_para4 = 0
-pmu_bat_para5 = 4
-pmu_bat_para6 = 14
-pmu_bat_para7 = 23
-pmu_bat_para8 = 32
-pmu_bat_para9 = 41
-pmu_bat_para10 = 51
-pmu_bat_para11 = 57
-pmu_bat_para12 = 64
-pmu_bat_para13 = 78
-pmu_bat_para14 = 91
+pmu_bat_para4 = 2
+pmu_bat_para5 = 5
+pmu_bat_para6 = 20
+pmu_bat_para7 = 33
+pmu_bat_para8 = 46
+pmu_bat_para9 = 56
+pmu_bat_para10 = 63
+pmu_bat_para11 = 68
+pmu_bat_para12 = 73
+pmu_bat_para13 = 82
+pmu_bat_para14 = 90
 pmu_bat_para15 = 100
 pmu_bat_para16 = 100
 pmu_usbvol_limit = 1
 pmu_usbcur_limit = 0
 pmu_usbvol = 4000
 pmu_usbcur = 0
-pmu_usbvol_pc = 4000
-pmu_usbcur_pc = 0
+pmu_usbvol_pc = 4400
+pmu_usbcur_pc = 600
 pmu_pwroff_vol = 3300
 pmu_pwron_vol = 2900
 pmu_pekoff_time = 6000
@@ -919,7 +1021,7 @@ key_min = 4
 key_max = 40
 
 [dvfs_table]
-max_freq = 1008000000
+max_freq = 912000000
 normal_freq = 720000000
 min_freq = 60000000
 LV_count = 8
