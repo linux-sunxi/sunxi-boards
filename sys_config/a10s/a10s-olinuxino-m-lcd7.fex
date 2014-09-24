@@ -5,7 +5,7 @@ machine = "A10s-OLinuXino-MICRO"
 [target]
 boot_clock = 1008
 dcdc2_vol = 1400
-dcdc3_vol = 1200
+dcdc3_vol = 1500
 ldo2_vol = 3000
 ldo3_vol = 3300
 ldo4_vol = 3300
