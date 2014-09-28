@@ -7,13 +7,12 @@ eraseflag = 0
 
 [target]
 boot_clock = 912
-dcdc2_vol = 1400
-dcdc3_vol = 1250
+dcdc2_vol = 1450
+dcdc3_vol = 1300
 ldo2_vol = 3000
 ldo3_vol = 2800
 ldo4_vol = 2800
-power_start = 0
-storage_type = -1
+storage_type = 0
 
 [clock]
 pll3 = 297
@@ -584,7 +583,7 @@ lcdhsync = port:PH26<2><0><default><default>
 lcdvsync = port:PH27<2><0><default><default>
 
 [tv_out_dac_para]
-dac_used = 1
+dac_used = 0
 dac0_src = 4
 dac1_src = 5
 dac2_src = 6
@@ -686,7 +685,7 @@ siv121d = 0
 gc2035 = 0
 
 [tvout_para]
-tvout_used = 1
+tvout_used = 0
 tvout_channel_num = 1
 
 [tvin_para]
@@ -822,10 +821,9 @@ usb_used = 1
 usb_port_type = 2
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
-usb_det_vbus_gpio = "axp_ctrl"
+usb_det_vbus_gpio = port:PH05<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_ac_enable_gpio = port:PH05<1><0><default><0>
-usb_restrict_gpio = 0
+usb_restrict_gpio = port:PH00<1><0><default><0>
 usb_host_init_state = 0
 usb_restric_flag = 0
 usb_restric_voltage = 3550000
@@ -835,7 +833,7 @@ usb_restric_capacity = 5
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH05<1><0><default><0>
+usb_drv_vbus_gpio = port:PH06<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -985,7 +983,7 @@ leds_trigger_1 = "heartbeat"
 
 [ir_para]
 ir_used = 1
-ir_rx = port:PB04<2><default><default><default>
+ir0_rx = port:PB04<2><default><default><default>
 
 [pmu_para]
 pmu_used = 1
@@ -1054,20 +1052,20 @@ key_max = 10
 
 [dvfs_table]
 max_freq = 912000000
-min_freq = 60000000
+min_freq = 720000000
 LV_count = 7
 LV1_freq = 1008000000
 LV1_volt = 1450
 LV2_freq = 912000000
-LV2_volt = 1400
+LV2_volt = 1425
 LV3_freq = 864000000
-LV3_volt = 1300
+LV3_volt = 1350
 LV4_freq = 720000000
-LV4_volt = 1200
+LV4_volt = 1250
 LV5_freq = 528000000
-LV5_volt = 1100
+LV5_volt = 1150
 LV6_freq = 312000000
-LV6_volt = 1050
+LV6_volt = 1100
 LV7_freq = 144000000
 LV7_volt = 1050
 
