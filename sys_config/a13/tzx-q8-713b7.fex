@@ -628,6 +628,9 @@ pmu_shutdown_chgcur2 = 1200
 pmu_suspendpwroff_vol = 3500
 pmu_batdeten = 1
 
+[tabletkeys_para]
+tabletkeys_used = 1
+
 [recovery_key]
 key_min = 4
 key_max = 6
