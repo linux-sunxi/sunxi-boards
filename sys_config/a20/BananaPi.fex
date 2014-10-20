@@ -265,21 +265,23 @@ manual_cs = 0
 
 [ctp_para]
 ctp_used = 0
-ctp_name = "gt811"
-ctp_twi_id = 2
-ctp_twi_addr = 0x40
+ctp_name = "ft5x_ts"
+ctp_twi_id = 3
+ctp_twi_addr = 0x38
 ctp_screen_max_x = 1024
 ctp_screen_max_y = 600
 ctp_revert_x_flag = 0
 ctp_revert_y_flag = 0
-ctp_exchange_x_y_flag = 1
+ctp_exchange_x_y_flag = 0
 ctp_firm = 1
-ctp_int_port = port:PH21<6><default><default><default>
-ctp_wakeup = port:PB13<1><default><default><1>
+ctp_int_port = port:PH09<6><default><default><default>
+ctp_wakeup = port:PH07<1><default><default><1>
+ctp_io_port = port:PH09<0><default><default><default>
+
 
 [ctp_list_para]
-ctp_det_used = 0
-ft5x_ts = 0
+ctp_det_used = 1
+ft5x_ts = 1
 gt82x = 0
 gslX680 = 0
 gt9xx_ts = 0
@@ -466,7 +468,7 @@ lcd_hv_s888_if = 0
 lcd_hv_syuv_if = 0
 lcd_lvds_ch = 0
 lcd_lvds_mode = 0
-lcd_lvds_bitwidth = 1
+lcd_lvds_bitwidth = 0
 lcd_lvds_io_cross = 0
 lcd_cpu_if = 0
 lcd_frm = 0
