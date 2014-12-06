@@ -172,14 +172,14 @@ uart_rts = port:PI16<3><1><default><default>
 uart_cts = port:PI17<3><1><default><default>
 
 [uart_para3]
-uart_used = 1
+uart_used = 0
 uart_port = 3
 uart_type = 2
 uart_tx = port:PH00<4><1><default><default>
 uart_rx = port:PH01<4><1><default><default>
 
 [uart_para4]
-uart_used = 0
+uart_used = 1
 uart_port = 4
 uart_type = 2
 uart_tx = port:PH04<4><1><default><default>
@@ -299,7 +299,7 @@ motor_shake = port:PB03<1><default><default><1>
 
 [gpio_para]
 gpio_used = 1
-gpio_num = 85
+gpio_num = 86
 gpio_pin_1 = port:PI00<1><default><default><default>
 gpio_pin_2 = port:PB21<1><default><default><default>
 gpio_pin_3 = port:PB20<1><default><default><default>
@@ -313,8 +313,8 @@ gpio_pin_10 = port:PI12<1><default><default><default>
 gpio_pin_11 = port:PI11<1><default><default><default>
 gpio_pin_12 = port:PI20<1><default><default><default>
 gpio_pin_13 = port:PB13<1><default><default><default>
-gpio_pin_14 = port:PH00<1><default><default><default>
-gpio_pin_15 = port:PH01<1><default><default><default>
+gpio_pin_14 = port:PH04<1><default><default><default>
+gpio_pin_15 = port:PH05<1><default><default><default>
 gpio_pin_16 = port:PB06<1><default><default><default>
 gpio_pin_17 = port:PI19<1><default><default><default>
 gpio_pin_18 = port:PI03<1><default><default><default>
@@ -385,6 +385,7 @@ gpio_pin_82 = port:PD12<1><default><default><default>
 gpio_pin_83 = port:PD13<1><default><default><default>
 gpio_pin_84 = port:PD14<1><default><default><default>
 gpio_pin_85 = port:PD15<1><default><default><default>
+gpio_pin_86 = port:PH15<0><default><default><0>
 
 [nand_para]
 nand_used = 0
@@ -819,10 +820,10 @@ kp_out7 = port:PH27<4><1><default><default>
 usb_used = 1
 usb_port_type = 2
 usb_detect_type = 1
-usb_id_gpio = port:PH04<0><1><default><default>
-usb_det_vbus_gpio = port:PH05<0><0><default><default>
+usb_id_gpio = port:PH03<0><1><default><default>
+usb_det_vbus_gpio = port:PH26<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_restrict_gpio = port:PH00<1><0><default><0>
+usb_restrict_gpio = 
 usb_host_init_state = 0
 usb_restric_flag = 0
 usb_restric_voltage = 3550000
@@ -832,7 +833,7 @@ usb_restric_capacity = 5
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH06<1><0><default><0>
+usb_drv_vbus_gpio = port:PH00<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -841,7 +842,7 @@ usb_restric_flag = 0
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH03<1><0><default><0>
+usb_drv_vbus_gpio = port:PH01<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -895,20 +896,23 @@ gps_osc_en = port:PI14<1><default><default><0>
 gps_rx_en = port:PI15<1><default><default><0>
 
 
-[sdio_wifi_para]
-sdio_wifi_used = 1
-sdio_wifi_sdc_id = 3
-sdio_wifi_mod_sel = 10
+;[sdio_wifi_para]
+;sdio_wifi_used = 1
+;sdio_wifi_sdc_id = 3
+;sdio_wifi_mod_sel = 10
 
-;sdio_vdd_en = port:PH27<1><default><default><0>
-;sdio_vcc_en = port:PH12<1><default><default><0>
-;sdio_wifi_shdn = port:PH22<1><default><default><1>
-;sdio_wifi_host_wakeup = port:PH15<1><default><default><1>
+;rtl8189es_vdd_en = port:PH27<1><default><default><0>
+;rtl8189es_shdn = port:PH22<1><default><default><1>
+;rtl8189es_wakeup = port:PH15<1><default><default><1>
 
-rtl8189es_vdd_en = port:PH27<1><default><default><0>
-;rtl8189es_vcc_en = port:PH12<1><default><default><0>
-rtl8189es_shdn = port:PH22<1><default><default><1>
-rtl8189es_wakeup = port:PH15<1><default><default><1>
+[sdio_wifi_pro_para]
+sdio_wifi_pro_used = 1
+sdio_wifi_pro_sdc_id = 3
+sdio_wifi_pro_mod_sel = 7
+
+ap6xxx_wl_regon = port:PH22<1><default><default><0>
+ap6xxx_wl_vdd_en = port:PH27<1><default><default><0>
+
 
 [usb_wifi_para]
 usb_wifi_used = 1
@@ -978,9 +982,12 @@ switch_used = 0
 leds_used = 1
 leds_num = 1
 leds_pin_1 = port:PH24<1><default><default><0>
+leds_pin_2 = port:PG02<1><default><default><0>
 leds_name_1 = "green:ph24:led1"
-leds_default_1 = 1
+leds_name_2 = "blue:pg02:led2"
+;leds_default_1 = 1
 leds_trigger_1 = "heartbeat"
+leds_trigger_2 = "mmc0"
 
 [ir_para]
 ir_used = 1
