@@ -980,7 +980,7 @@ switch_used = 0
 
 [leds_para]
 leds_used = 1
-leds_num = 1
+leds_num = 2
 leds_pin_1 = port:PH24<1><default><default><0>
 leds_pin_2 = port:PG02<1><default><default><0>
 leds_name_1 = "green:ph24:led1"
