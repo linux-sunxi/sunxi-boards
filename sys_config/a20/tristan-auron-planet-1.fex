@@ -766,7 +766,7 @@ usb_port_type = 1
 usb_detect_type = 0
 usb_drv_vbus_gpio = port:PH03<1><0><default><0>
 usb_restrict_gpio =
-usb_host_init_state = 0
+usb_host_init_state = 1
 usb_restric_flag = 0
 
 [usb_feature]
@@ -833,6 +833,10 @@ ap6xxx_wl_host_wake = port:PH10<0><default><default><0>
 ap6xxx_bt_regon = port:PB05<1><default><default><0>
 ap6xxx_bt_wake = port:PI20<1><default><default><0>
 ap6xxx_bt_host_wake = port:PI21<0><default><default><0>
+
+[usb_wifi_para]
+usb_wifi_used = 1
+usb_wifi_usbc_num = 2
 
 [3g_para]
 3g_used = 0
