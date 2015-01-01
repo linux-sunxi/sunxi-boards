@@ -239,19 +239,17 @@ spi_miso = port:PA08<3><default><default><default>
 
 [ctp_para]
 ctp_used = 1
+ctp_name = "ft5x_ts"
 ctp_twi_id = 2
-ctp_twi_addr = 0x40
+ctp_twi_addr = 0x38
 ctp_screen_max_x = 1024
 ctp_screen_max_y = 768
-ctp_revert_x_flag = 0
+ctp_revert_x_flag = 1
 ctp_revert_y_flag = 0
-ctp_exchange_x_y_flag = 1
-ctp_ft5402_num = 9702
-mSSD253xDriverType = 9701
-ctp_cob_gslX680 = 8
+ctp_exchange_x_y_flag = 0
 ctp_int_port = port:PH21<6><default><default><default>
 ctp_wakeup = port:PB13<1><default><default><1>
-ctp_power_en = port:PH22<1><default><default><0>
+ctp_power_port = port:PH22<1><default><default><0>
 
 [tkey_para]
 tkey_used = 0
