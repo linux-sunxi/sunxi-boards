@@ -280,7 +280,7 @@ ctp_io_port = port:PH09<0><default><default><default>
 
 
 [ctp_list_para]
-ctp_det_used = 1
+ctp_det_used = 0
 ft5x_ts = 1
 gt82x = 0
 gslX680 = 0
