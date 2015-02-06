@@ -21,7 +21,7 @@ dcdc4_vol = 1240
 dcdc5_vol = 1500
 aldo2_vol = 3000
 aldo3_vol = 3000
-ldoio1_vol = 1800
+;doio1_vol = 1800
 aldo1_vol = 3300
 dldo2_vol = 2800
 
