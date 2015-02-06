@@ -287,7 +287,7 @@ wifi_sdc_id        = 1
 wifi_usbc_id       = 1
 wifi_usbc_type     = 1
 wifi_mod_sel       = 6
-wifi_power         = 
+wifi_power         = "axp22_dldo1" 
 
 ; ========Audio Section=======
 [audio_para]
