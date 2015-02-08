@@ -191,7 +191,7 @@ sdc_isio          = 0
 sdc_regulator     = "none"
 
 [mmc1_para]
-sdc_used          = 1
+sdc_used          = 0
 sdc_detmode       = 4
 sdc_buswidth      = 4
 sdc_clk           = port:PG00<2><1><2><default>
@@ -209,7 +209,7 @@ sdc_regulator     = "none"
 [mmc2_para]
 sdc_used          = 1
 sdc_detmode       = 3
-sdc_buswidth      = 8
+sdc_buswidth      = 4
 sdc_clk           = port:PC07<3><1><2><default>
 sdc_cmd           = port:PC06<3><1><2><default>
 sdc_d0            = port:PC08<3><1><2><default>
@@ -221,7 +221,7 @@ sdc_d5            = port:PC13<3><1><2><default>
 sdc_d6            = port:PC14<3><1><2><default>
 sdc_d7            = port:PC15<3><1><2><default>
 emmc_rst          = port:PC24<3><1><2><default>
-sdc_det           =
+sdc_det           = 
 sdc_use_wp        = 0
 sdc_wp            =
 sdc_isio          = 0
