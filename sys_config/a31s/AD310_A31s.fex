@@ -184,7 +184,7 @@ sdc_d0            = port:PF01<2><1><2><default>
 sdc_d1            = port:PF00<2><1><2><default>
 sdc_d2            = port:PF05<2><1><2><default>
 sdc_d3            = port:PF04<2><1><2><default>
-sdc_det           = port:PA04<6><1><2><default>
+sdc_det           = port:PH22<6><1><2><default>
 sdc_use_wp        = 0
 sdc_wp            =
 sdc_isio          = 0
@@ -518,7 +518,7 @@ motor_shake         = port:power3<1><default><default><1>
 
 ; =====NAND Section=====
 [nand0_para]
-nand_support_2ch    = 0
+nand_support_2ch    = 1
 
 nand0_used          = 0
 nand0_we            = port:PC00<2><default><default><default>
