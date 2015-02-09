@@ -46,7 +46,7 @@ sdc_d2          = port:PF5<2><1><default><default>
 ; Card2 is Emmc part in Core Board
 ;------------------------------------------------
 [card2_boot_para]
-card_ctrl       = 2
+card_ctrl       = 1
 card_high_speed = 1
 card_line       = 4
 sdc_cmd         = port:PC6<3><1><default><default>
@@ -191,8 +191,8 @@ sdc_isio          = 0
 sdc_regulator     = "none"
 
 [mmc1_para]
-sdc_used          = 0
-sdc_detmode       = 4
+sdc_used          = 1
+sdc_detmode       = 3
 sdc_buswidth      = 4
 sdc_clk           = port:PG00<2><1><2><default>
 sdc_cmd           = port:PG01<2><1><2><default>
@@ -216,11 +216,11 @@ sdc_d0            = port:PC08<3><1><2><default>
 sdc_d1            = port:PC09<3><1><2><default>
 sdc_d2            = port:PC10<3><1><2><default>
 sdc_d3            = port:PC11<3><1><2><default>
-sdc_d4            = port:PC12<3><1><2><default>
-sdc_d5            = port:PC13<3><1><2><default>
-sdc_d6            = port:PC14<3><1><2><default>
-sdc_d7            = port:PC15<3><1><2><default>
-emmc_rst          = port:PC24<3><1><2><default>
+;sdc_d4            = port:PC12<3><1><2><default>
+;sdc_d5            = port:PC13<3><1><2><default>
+;sdc_d6            = port:PC14<3><1><2><default>
+;sdc_d7            = port:PC15<3><1><2><default>
+;emmc_rst          = port:PC24<3><1><2><default>
 sdc_det           = 
 sdc_use_wp        = 0
 sdc_wp            =
