@@ -278,7 +278,6 @@ ctp_int_port = port:PH09<6><default><default><default>
 ctp_wakeup = port:PH07<1><default><default><1>
 ctp_io_port = port:PH09<0><default><default><default>
 
-
 [ctp_list_para]
 ctp_det_used = 0
 ft5x_ts = 1
@@ -422,7 +421,7 @@ good_block_ratio = 0
 disp_init_enable = 1
 disp_mode = 0
 screen0_output_type = 3
-screen0_output_mode = 4
+screen0_output_mode = 5
 screen1_output_type = 2
 screen1_output_mode = 11
 fb0_framebuffer_num = 2
@@ -478,9 +477,9 @@ lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
 lcd_bl_en_used = 1
-lcd_bl_en = port:PH07<1><0><default><1>
+lcd_bl_en = port:PH08<1><0><default><1>
 lcd_power_used = 1
-lcd_power = port:PH08<1><0><default><1>
+lcd_power = port:PH12<1><0><default><1>
 lcd_pwm_used = 1
 lcd_pwm = port:PB02<2><0><default><default>
 lcdd0 = port:PD00<3><0><default><default>
@@ -794,8 +793,8 @@ ps2_sda = port:PI15<3><1><default><default>
 
 [can_para]
 can_used = 0
-can_tx = port:PA16<3><default><default><default>
-can_rx = port:PA17<3><default><default><default>
+can_tx = port:PH20<4><default><default><default>
+can_rx = port:PH21<4><default><default><default>
 
 [keypad_para]
 kp_used = 0
@@ -823,9 +822,9 @@ usb_used = 1
 usb_port_type = 2
 usb_detect_type = 1
 usb_id_gpio = port:PH04<0><1><default><default>
-usb_det_vbus_gpio = port:PH05<0><0><default><default>
+usb_det_vbus_gpio = port:PH15<0><0><default><default>
 usb_drv_vbus_gpio = port:PB09<1><0><default><0>
-usb_restrict_gpio = port:PH00<1><0><default><0>
+usb_restrict_gpio = 
 usb_host_init_state = 0
 usb_restric_flag = 0
 usb_restric_voltage = 3550000
@@ -835,7 +834,7 @@ usb_restric_capacity = 5
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH06<1><0><default><0>
+usb_drv_vbus_gpio = port:PH22<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -844,7 +843,7 @@ usb_restric_flag = 0
 usb_used = 1
 usb_port_type = 1
 usb_detect_type = 0
-usb_drv_vbus_gpio = port:PH03<1><0><default><0>
+usb_drv_vbus_gpio = port:PH27<1><0><default><0>
 usb_restrict_gpio =
 usb_host_init_state = 1
 usb_restric_flag = 0
@@ -970,7 +969,7 @@ spdif_din =
 [audio_para]
 audio_used = 1
 capture_used = 1
-audio_pa_ctrl = port:PH15<1><default><default><1>
+audio_pa_ctrl = port:PH26<1><default><default><1>
 
 [switch_para]
 switch_used = 0
