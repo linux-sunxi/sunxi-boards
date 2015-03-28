@@ -476,9 +476,9 @@ lcd_gamma_tbl_0 = 0x0
 lcd_gamma_tbl_1 = 0x10101
 lcd_gamma_tbl_255 = 0xffffff
 lcd_bl_en_used = 1
-lcd_bl_en = port:PH07<1><0><default><1>
+lcd_bl_en = port:PH08<1><0><default><1>
 lcd_power_used = 1
-lcd_power = port:PH08<1><0><default><1>
+lcd_power = port:PH12<1><0><default><1>
 lcd_pwm_used = 1
 lcd_pwm = port:PB02<2><0><default><default>
 lcdd0 = port:PD00<3><0><default><default>
@@ -792,8 +792,8 @@ ps2_sda = port:PI15<3><1><default><default>
 
 [can_para]
 can_used = 0
-can_tx = port:PA16<3><default><default><default>
-can_rx = port:PA17<3><default><default><default>
+can_tx = port:PH20<4><default><default><default>
+can_rx = port:PH21<4><default><default><default>
 
 [keypad_para]
 kp_used = 0
@@ -973,7 +973,7 @@ spdif_din =
 [audio_para]
 audio_used = 1
 capture_used = 1
-audio_pa_ctrl = port:PH15<1><default><default><1>
+audio_pa_ctrl = port:PH26<1><default><default><1>
 
 [switch_para]
 switch_used = 0
