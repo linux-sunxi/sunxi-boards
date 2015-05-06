@@ -68,7 +68,7 @@ pll9 = 297
 pll10 = 702
 
 [dram_para]
-dram_clk = 240
+dram_clk = 312
 dram_type = 3
 dram_zq = 0xfb
 dram_odt_en = 0
