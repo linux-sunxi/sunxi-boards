@@ -263,13 +263,13 @@ red_led_active_low = 0
 
 [ths_para]
 ths_used = 1
-ths_trip1_count = 5
+ths_trip1_count = 6
 ths_trip1_0 = 70
 ths_trip1_1 = 80
-ths_trip1_2 = 90
-ths_trip1_3 = 100
-ths_trip1_4 = 105
-ths_trip1_5 = 0
+ths_trip1_2 = 85
+ths_trip1_3 = 90
+ths_trip1_4 = 95
+ths_trip1_5 = 100
 ths_trip1_6 = 0
 ths_trip1_7 = 0
 ths_trip1_0_min = 0
@@ -281,21 +281,22 @@ ths_trip1_2_max = 3
 ths_trip1_3_min = 3
 ths_trip1_3_max = 4
 ths_trip1_4_min = 4
-ths_trip1_4_max = 4
-ths_trip1_5_min = 0
-ths_trip1_5_max = 0
+ths_trip1_4_max = 5
+ths_trip1_5_min = 5
+ths_trip1_5_max = 5
 ths_trip1_6_min = 0
 ths_trip1_6_max = 0
 ths_trip2_count = 1
 ths_trip2_0 = 105
 
 [cooler_table]
-cooler_count = 5
-cooler0 = "1200000 4 4294967295 0"
-cooler1 = "1200000 3 4294967295 0"
-cooler2 = "1200000 2 4294967295 0"
-cooler3 = "1200000 1 4294967295 0"
-cooler4 = "504000 1 4294967295 0"
+cooler_count = 6
+cooler0 = "1296000 4 4294967295 0"
+cooler1 = "1200000 4 4294967295 0"
+cooler2 = "1008000 4 4294967295 0"
+cooler3 =  "816000 4 4294967295 0"
+cooler4 =  "648000 4 4294967295 0"
+cooler5 =  "480000 1 4294967295 0"
 
 [nand0_para]
 nand_support_2ch = 0
@@ -709,37 +710,54 @@ ir_addr_code12 = 65344
 ir_used = 1
 ir_tx = port:PH07<2><default><default><default>
 
+;----------------------------------------------------------------------------------
+; dvfs voltage-frequency table configuration
+;
+; pmuic_type:0:none, 1:gpio, 2:i2c
+; pmu_gpio0: gpio config.
+; pmu_levelx: 0~9999: voltage(mV), 10000~90000:gpio0 state. voltage form high to low.
+;
+; extremity_freq(Hz): cpu extremity frequency when run benckmark or demo apk
+;                     1536MHz@1500mV with radiator, 1296MHz@1340mV without radiator
+; max_freq: cpu maximum frequency, based on Hz, can not be more than 1200MHz
+; min_freq: cpu minimum frequency, based on Hz, can not be less than 60MHz
+;
+; LV_count: count of LV_freq/LV_volt, must be < 16
+;
+; LV1: core vdd is 1.50v if cpu frequency is (1296Mhz,  1536Mhz]
+; LV2: core vdd is 1.34v if cpu frequency is (1200Mhz,  1296Mhz]
+; LV3: core vdd is 1.32v if cpu frequency is (1008Mhz,  1200Mhz]
+; LV4: core vdd is 1.20v if cpu frequency is (816Mhz,   1008Mhz]
+; LV5: core vdd is 1.10v if cpu frequency is (648Mhz,    816Mhz]
+; LV6: core vdd is 1.04v if cpu frequency is (0Mhz,      648Mhz]
+; LV7: core vdd is 1.04v if cpu frequency is (0Mhz,      648Mhz]
+; LV8: core vdd is 1.04v if cpu frequency is (0Mhz,      648Mhz]
+;
+;----------------------------------------------------------------------------------
 [dvfs_table]
 pmuic_type = 2
 pmu_gpio0 = port:PL06<1><1><2><1>
 pmu_level0 = 11300
 pmu_level1 = 1100
-#max_freq = 1200000000
-max_freq = 1536000000
-min_freq = 480000000
+max_freq = 1296000000
+min_freq = 648000000
 LV_count = 8
-#LV1_freq = 1200000000
-LV1_freq = 1536000000
-#LV1_volt = 1300
-LV1_volt = 1500
-#LV2_freq = 1008000000
+LV1_freq = 1296000000
+LV1_volt = 1340
 LV2_freq = 1200000000
-#LV2_volt = 1200
-LV2_volt = 1300
-LV3_freq = 0
-#LV3_freq = 1008000000
-LV3_volt = 1100
-#LV3_volt = 1200
-LV4_freq = 0
+LV2_volt = 1320
+LV3_freq = 1008000000
+LV3_volt = 1200
+LV4_freq = 816000000
 LV4_volt = 1100
-LV5_freq = 0
-LV5_volt = 1100
+LV5_freq = 648000000
+LV5_volt = 1040
 LV6_freq = 0
-LV6_volt = 1100
+LV6_volt = 1040
 LV7_freq = 0
-LV7_volt = 1100
+LV7_volt = 1040
 LV8_freq = 0
-LV8_volt = 1100
+LV8_volt = 1040
 
 [gpu_dvfs_table]
 G_LV_count = 3
