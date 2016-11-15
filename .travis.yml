@@ -1,0 +1,14 @@
+# use container-based infrastructure
+sudo: false
+
+os: linux
+
+# retrieve and extract sunxi-tools archive, run dedicated test rule
+script:
+  - wget -O sunxi-tools.zip https://github.com/linux-sunxi/sunxi-tools/archive/master.zip
+  - unzip -q sunxi-tools.zip
+  - make -C sunxi-tools-master/tests/ sunxi-boards_CI BOARDS_DIR=../..
+
+# turn off email notifications
+notifications:
+  - email: false
