@@ -239,9 +239,9 @@ spi_miso = port:PA08<3><default><default><default>
 
 [ctp_para]
 ctp_used = 1
-ctp_ft5402_num = 402
+ctp_name = "ft5x_ts"
 ctp_twi_id = 2
-ctp_twi_addr = 0x40
+ctp_twi_addr = 0x38
 ctp_screen_max_x = 1024
 ctp_screen_max_y = 600
 ctp_revert_x_flag = 0
