@@ -1,7 +1,7 @@
 ;sun50iw6p1 application
 ;---------------------------------------------------------------------------------------------------------
-; 说明： 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串
-; 描述gpio的形式：Port:端口+组内序号<功能分配><内部电阻状态><驱动能力><输出电平状态>
+; Explanation: The string in the script is case sensitive. The user can modify the value after "=", but do not modify the previous string.
+; Describe the form of gpio: Port: Port + Group No. <Function Allocation> <Internal Resistor Status> <Drive Capability> <Output Level Status>
 ;---------------------------------------------------------------------------------------------------------
 
 [product]
@@ -15,7 +15,7 @@ eraseflag   = 1
 ; burn_key:           0-do not use dragonKey   1-use dragonKey
 ; dragonboard_test:   0-build dragonboard for flash boot   1-build dragonboard for TF boot
 ; power_mode:         0-use axp    1-use dummy axp
-; advert_enable       0-close advert logo    1-open advert logo     (只有多核启动下有效)
+; advert_enable       0-close advert logo    1-open advert logo     (Only valid under multi-core boot)
 ;----------------------------------------------------------------------------------
 [target]
 boot_clock       = 1320
@@ -54,14 +54,14 @@ pg_bias         = "axp806:bldo3:1800"
 
 ;----------------------------------------------------------------------------------
 ;   ir_boot_recovery_used : 1: used this function  0: not used
-;   ir_work_mode          : 模式选择
-;                           0: 刷机,
-;                           1: 一键恢复(uboot阶段),
-;                           2: 安卓recovery,
-;                           3: 安卓恢复出厂设置.
-;                           如果不设置，默认为安卓recovery .
-;   ir_press_times        : ir遥控器连续按几次才生效,如果不设置默认为按1次生效
-;   ir_detect_time        : ir遥控检测时间,单位:ms,如果不设置默认为3000ms
+;   ir_work_mode          : Mode selection
+;                           0: brush machine (FIXME),
+;                           1: One-click recovery (uboot stage),
+;                           2: android recovery,
+;                           3: android factory reset
+;                           If not set, the default is android recovery.
+;   ir_press_times        : ir remote control takes several times to take effect, if not set default to 1 time
+;   ir_detect_time        : ir remote detection time, unit: ms, if not set default to 3000ms
 ;   ir_recovery_key_code0 : ir check key code
 ;   ir_addr_code0         : ir key addr
 ;                           you can increase ir support num, like:
@@ -86,21 +86,21 @@ sprite_gpio0    = port:PL04<1><default><default><1>
 next_work       = 3
 
 ;----------------------------------------------------------------------------------
-;   used              :  模块使能端，    1：开启，0：关闭
-;   press_mode_enable :  长短按模式使能，1：开启，0：关闭
-;                        a)如果开启了该模式，则key_work_mode失效，short_press_mode和long_press_mode生>效,
-    ;                      recovery按键可以通过长按和短按来触发两种不同的模式;
-;                        b)如果关闭了该模式，则key_work_mode生效，recovery按键只能触发一种模式.
-;   key_work_mode     :  模式选择
-;                        0: 刷机,
-;                        1: 一键恢复(uboot阶段),
-;                        2: 安卓recovery,
-;                        3: 安卓恢复出厂设置.
-;                        如果不设置，模式为安卓recovery.
-;   short_press_mode  :  长按触发的模式，选项同上.
-;   long_press_mode   :  短按触发的模式，选项同上.
-;   key_press_time    :  定义长按的时间，单位:毫秒.
-;   recovery_key      :  按键配置.
+; used			: module enable, 1: turn on, 0: off
+; press_mode_enable	: Long and short press mode enable, 1: On, 0: Off
+;			a) If this mode is enabled, key_work_mode is disabled, and short_press_mode and long_press_mode are valid.
+;			   The recovery button can trigger two different modes by long press and short press;
+;			b) If this mode is turned off, key_work_mode is in effect and the recovery button can only trigger one mode.
+; key_work_mode		: mode selection
+;			0: Brush machine,
+;			1: One-click recovery (uboot stage),
+;			2: android recovery,
+;			3: android restore factory settings.
+;			If not set, the mode is android recovery.
+; short_press_mode	: Long press the trigger mode, the options are the same as above.
+; long_press_mode	: Short press the trigger mode, the options are the same as above.
+; key_press_time	: Defines the length of the long press, in milliseconds.
+; recovery_key		: Button configuration.
 ;----------------------------------------------------------------------------------
 [key_boot_recovery]
 used                    = 1
@@ -188,7 +188,7 @@ pll10           = 264
 ;*****************************************************************************
 ; sdram configuration
 ;
-; if dram_clk ≠ 0, will use dram_clk to set dram clk.
+; if dram_clk != 0, will use dram_clk to set dram clk.
 ; if dram_clk =  0, will use dram_tpr7 to set dram clk.
 ; dram_tpr7[31:24] to set DDR4 clk,
 ; dram_tpr7[23:16] to set DDR3 clk,
@@ -234,7 +234,7 @@ dram_tpr13   = 0x0000
 ;------------------------------------------------------------------------------;
 ; 10/100/100Mbps Ethernet MAC Controller Configure                             ;
 ;------------------------------------------------------------------------------;
-;   配置选项：                                                                 ;
+;  Configuration options:                                                      ;
 ;   gmac_used  ---  1: gmac used, 0: not used                                  ;
 ;   gmac_powerx --  A[:B] A: axp channel, B: voltage value                     ;
 ;   phy-mode    --  rgmii, rmii, mii                                           ;
