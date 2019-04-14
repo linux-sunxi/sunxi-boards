@@ -1,13 +1,13 @@
 ;A20 PAD application
 ;-------------------------------------------------------------------------------
-; 说明：
-;   1. 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串     
-;   2. 新增主键和子键的名称必须控制在32个字符以内，不包括32个
-;   3. 所以的注释以“;”开始，单独占据一行
-;   4. 注释不可和配置项同行，例如：主键和子健后面不能添加任何形式的注释
+; Description:
+;   1. The strings in the script are case sensitive. You can modify the value after "=", but don't modify the previous string.     
+;   2. The names of the newly added primary and subkeys must be controlled within 32 characters, excluding 32
+;   3. So the comment starts with ";" and occupies a separate line.
+;   4. Comments cannot be accompanied by configuration items. For example, primary keys and child keys cannot be added to any form of comments.
 ;
-; gpio的描述形式：Port:端口+组内序号<功能分配><内部电阻状态><驱动能力><输出电平状态>
-;           例如：port:PA0<0><default><default><default>
+; Description of gpio: Port: Port + group number <function assignment> <internal resistance state> <drive capability> <output level state>
+;           E.g:port:PA0<0><default><default><default>
 ;-------------------------------------------------------------------------------
 
 [product]
@@ -907,19 +907,19 @@ kp_out7             = port:PH27<4><1><default><default>
 
 
 ;-------------------------------------------------------------------------------
-;[usbc0]：控制器0的配置。
-;usb_used：USB使能标志。置1，表示系统中USB模块可用,置0,则表示系统USB禁用。
-;usb_port_type：USB端口的使用情况。 0：device only;1：host only;2：OTG
-;usb_detect_type：USB端口的检查方式。0：不做检测;1：vbus/id检查;2：id/dpdm检查
-;usb_id_gpio：USB ID pin脚配置。具体请参考gpio配置说明。
-;usb_det_vbus_gpio：USB DET_VBUS pin脚配置。具体请参考gpio配置说明。
-;usb_drv_vbus_gpio：USB DRY_VBUS pin脚配置。具体请参考gpio配置说明。
-;usb_det_vbus_gpio: "axp_ctrl",表示axp 提供
-;usb_restrict_gpio  usb限流控制pin
-;usb_restric_flag:  usb限流标置
+;[usbc0]:Configuration of controller 0.
+;usb_used:USB enable flag. Set to 1, indicating that the USB module is available in the system. If set to 0, the system USB is disabled.
+;usb_port_type:Usage of the USB port. 0:device only;1:host only;2:OTG
+;usb_detect_type:The way to check the USB port. 0: no test; 1: vbus/id check; 2: id/dpdm check
+;usb_id_gpio:USB ID pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_det_vbus_gpio:USB DET_VBUS pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_drv_vbus_gpio:USB DRY_VBUS pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_det_vbus_gpio: "axp_ctrl", indicating that axp provides
+;usb_restrict_gpio  usb current limit control pin
+;usb_restric_flag:  usb current limit flag
 ;-------------------------------------------------------------------------------
 ;-------------------------------------------------------------------------------
-;---       USB0控制标志
+;---       USB0 Control sign
 ;-------------------------------------------------------------------------------
 [usbc0]
 usb_used                 = 1
@@ -932,7 +932,7 @@ usb_host_init_state      = 0
 
 
 ;-------------------------------------------------------------------------------
-;---       USB1控制标志
+;---       USB1 Control sign
 ;------------------------------------------------------------------------------
 [usbc1]
 usb_used            = 1
@@ -944,7 +944,7 @@ usb_host_init_state = 1
 usb_restric_flag    = 0
 
 ;------------------------------------------------------------------------------
-;---       USB2控制标志
+;---       USB2 Control sign
 ;------------------------------------------------------------------------------
 [usbc2]
 usb_used            = 1
@@ -1139,16 +1139,16 @@ ir_rx               = port:PB04<2><default><default><default>
 ;-------------------------------------------------------------------------------
 ;pmu_twi_addr           ---slave address
 ;pmu_twi_id             ---i2c bus number (0 TWI0, 1 TWI2, 2 TWI3)
-;pmu_irq_id             ---irq number (0 irq0,1 irq1,……)
-;pmu_battery_rdc        ---battery initial resistance,mΩ,根据实际电池内阻填写
-;pmu_battery_cap        ---battery capability,mAh，根据实际电池容量填写
-;pmu_init_chgcur        ---set initial charging current limite,mA，300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
-;pmu_suspend_chgcur     ---set suspend charging current limite,mA，300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
-;pmu_resume_chgcur      ---set resume charging current limite,mA，300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
-;pmu_shutdown_chgcur    ---set shutdown charging current limite,mA，300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
+;pmu_irq_id             ---irq number (0 irq0,1 irq1,...)
+;pmu_battery_rdc        ---battery initial resistance,mOhm,Fill in according to the actual battery internal resistance
+;pmu_battery_cap        ---battery capability,mAh,Fill in according to the actual battery capacity
+;pmu_init_chgcur        ---set initial charging current limite,mA,300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
+;pmu_suspend_chgcur     ---set suspend charging current limite,mA,300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
+;pmu_resume_chgcur      ---set resume charging current limite,mA,300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
+;pmu_shutdown_chgcur    ---set shutdown charging current limite,mA,300/400/500/600/700/800/900/1000/1100/1200/1300/1400/1500/1600/1700/1800
 ;pmu_init_chgvol        ---set initial charing target voltage,mV,4100/4150/4200/4360
 ;pmu_init_chgend_rate   ---set initial charing end current  rate,10/15
-;pmu_init_chg_enabled   ---set initial charing enabled,0:关闭,1:打开
+;pmu_init_chg_enabled   ---set initial charing enabled,0: off, 1: open
 ;pmu_init_adc_freq      ---set initial adc frequency,Hz,25/50/100/200
 ;pmu_init_adc_freqc     ---set initial coulomb adc coufrequency,Hz,25/50/100/200
 ;pmu_init_chg_pretime   ---set initial pre-charging time,min,40/50/60/70
@@ -1160,14 +1160,14 @@ ir_rx               = port:PB04<2><default><default><default>
 ;pmu_pwroff_vol         ---set protect voltage when system start up,mV,2600/2700/2800/2900/3000/3100/3200/3300
 ;pmu_pwron_vol          ---set protect voltage after system start up,mV,2600/2700/2800/2900/3000/3100/3200/3300
 ;pmu_pekoff_time        ---set pek off time,ms, 4000/6000/8000/10000
-;pmu_pekoff_en          ---set pek off enable, 0:关闭,1:打开
+;pmu_pekoff_en          ---set pek off enable, 0: off, 1: open
 ;pmu_peklong_time       ---set pek pek long irq time,ms,1000/1500/2000/2500
 ;pmu_pekon_time         ---set pek on time,ms,128/1000/2000/3000
 ;pmu_pwrok_time         ---set pmu pwrok delay time,ms,8/64
 ;pmu_pwrnoe_time        ---set pmu n_oe power down delay time,ms,128/1000/2000/3000
-;pmu_intotp_en		  	---set pmu power down when overtempertur enable,0:关闭，1：打开
+;pmu_intotp_en		  	---set pmu power down when overtempertur enable,0: off, 1: open
 ;pmu_suspendpwroff_vol  ---set pmu shutdown voltage when cpu is suspend and battery voltage is low
-;pmu_batdeten			---set pmu battery detect enabled,0:关闭，1：打开
+;pmu_batdeten			---set pmu battery detect enabled,0: off, 1: open
 ;-------------------------------------------------------------------------------
 [pmu_para]
 pmu_used                 = 1

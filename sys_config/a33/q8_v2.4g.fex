@@ -36,8 +36,8 @@ burn_key        = 1
 
 ;---------------------------------------------------------------------------------
 ; uboot key detect enable
-; 当keyen_flag = 1 时，支持按键检测
-; 当keyen_flag = 0 时，不支持
+; keyen_flag = 1; button detection
+; keyen_flag = 0; not supported
 ;---------------------------------------------------------------------------------
 [key_detect_en]
 keyen_flag = 1
@@ -441,7 +441,7 @@ cooler3 =  "648000 4 4294967295 0"
 ;----------------------------------------------------------------------------------
 ;[nandx_para]
 ;nand_support_2ch    = support dual channel
-;nand0_used          = nand0使能标识
+;nand0_used          = Nand0 enable flag
 ;----------------------------------------------------------------------------------
 [nand0_para]
 nand_support_2ch    = 0
@@ -1199,16 +1199,16 @@ drc_used	= 0
 ;pmu_used                    ---0:not used,1:used
 ;pmu_twi_addr                ---slave address
 ;pmu_twi_id                  ---i2c bus number (0 TWI0, 1 TWI2, 2 TWI3)
-;pmu_irq_id		     ---irq number (0 irq0,1 irq1,……)
+;pmu_irq_id		     ---irq number (0 irq0,1 irq1,...)
 ;pmu_battery_rdc             ---battery initial resistance
 ;pmu_battery_cap             ---battery capability,mAh
 ;pmu_batdeten		     ---battery detect en;0:disable 1:enable
 ;PMU_CHG_IC_temp used for battery temperature protect when charging
 ;PMU_CHG_IC_temp  --the object temperature want to adjust to (unit: 'C'), 0: this function unused, other value is object temperature
-;pmu_runtime_chgcur          ---set initial charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_earlysuspend_chgcur     ---set earlysuspend charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_suspend_chgcur          ---set suspend charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_shutdown_chgcur         ---set shutdown charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_runtime_chgcur          ---set initial charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_earlysuspend_chgcur     ---set earlysuspend charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_suspend_chgcur          ---set suspend charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_shutdown_chgcur         ---set shutdown charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
 ;pmu_init_chgvol             ---set initial charing target voltage,mV,4100/4220/4200/4240
 ;pmu_init_chgend_rate        ---set initial charing end current  rate,10/15
 ;pmu_init_chg_enabled        ---set initial charing enabled,0:disable,1:enable
@@ -1250,8 +1250,8 @@ drc_used	= 0
 ;pmu_bat_para30              ---battery indication at 4.12V
 ;pmu_bat_para31              ---battery indication at 4.14V
 ;pmu_bat_para32              ---battery indication at 4.15V
-;pmu_usbvol_limit            ---set usb-ac limited voltage enable,1:enable，0：disable
-;pmu_usbcur_limit            ---set usb-ac limited current enable,1:enable，0：disable
+;pmu_usbvol_limit            ---set usb-ac limited voltage enable,1:enable,0:disable
+;pmu_usbcur_limit            ---set usb-ac limited current enable,1:enable,0:disable
 ;pmu_usbvol                  ---set usb-ac limited voltage level,mV,4000/4100/4200/4300/4400/4500/4600/4700,0 - not limite
 ;pmu_usbcur                  ---set usb-ac limited current level,mA,500/900, 0 - not limite
 ;pmu_usbvol_pc	             ---set usb-pc limited voltage level,mV,4000/4100/4200/4300/4400/4500/4600/4700,0 - not limite
@@ -1268,8 +1268,8 @@ drc_used	= 0
 ;pmu_battery_warning_level2  ---low power warning low level,0%-15%,1%/step
 ;pmu_restvol_time            ---battery indicaton reflash time,30/60/120/
 ;pmu_ocv_cou_adjust_time     ---ocv battery indication reflash time,60/120/30
-;pmu_chgled_func             ---CHGKED pin control，0:controlled by pmu,1:controlled by Charger
-;pmu_chgled_type             ---CHGLED Type select when pmu_chgled_func=0,0:Type A，1：Type B
+;pmu_chgled_func             ---CHGKED pin control,0:controlled by pmu,1:controlled by Charger
+;pmu_chgled_type             ---CHGLED Type select when pmu_chgled_func=0,0:Type A,1:Type B
 ;pmu_vbusen_func	     ---N_VBUSEN function select,0:as an output,1:as an input
 ;pmu_reset                   ---when power key press longer than 16's,PMU reset or not.0:not reset 1:reset
 ;pmu_IRQ_wakeup		     ---press IRQ wakeup or not when sleep or power down.0:not wakeup 1:wakeup

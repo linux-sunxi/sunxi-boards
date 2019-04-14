@@ -1,7 +1,7 @@
 ;A64 PAD application
 ;---------------------------------------------------------------------------------------------------------
-; 说明： 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串
-; 描述gpio的形式：Port:端口+组内序号<功能分配><内部电阻状态><驱动能力><输出电平状态>
+; Explanation: The string in the script is case sensitive. The user can modify the value after "=", but do not modify the previous string.
+;  Describe the form of gpio: Port: Port + Group No. <Function Allocation> <Internal Resistor Status> <Drive Capability> <Output Level Status>
 ;---------------------------------------------------------------------------------------------------------
 
 [product]
@@ -160,7 +160,7 @@ dram_tpr13      = 0x04000100
 ;------------------------------------------------------------------------------;
 ; 10/100/100Mbps Ethernet MAC Controller Configure                             ;
 ;------------------------------------------------------------------------------;
-;   配置选项：                                                                 ;
+;   Configuration options:                                                                 ;
 ;   gmac_used  ---  1: gmac used, 0: not used                                  ;
 ;------------------------------------------------------------------------------;
 ;         MII  GMII  RGMII        MII  GMII  RGMII        MII  GMII  RGMII     ;
@@ -922,7 +922,7 @@ usb_hsic_int_n_gpio         =
 usb_hsic_reset_n_gpio       =
 
 ;--------------------------------
-;---     序列号标志
+;---     Serial number mark
 ;--------------------------------
 [serial_feature]
 sn_filename = "ULI/factory/snum.txt"
@@ -1194,7 +1194,7 @@ daudio1_used = 0
 ;allwinner,dachpf_cfg : 1:use adchpf 0:no use
 ;allwinner,aif2config : 1:use aif2 0:no use
 ;allwinner,aif3config :	1:use aif3 0:no use
-;allwinner,hp_detect_case ：0：low 1：high
+;allwinner,hp_detect_case :0:low 1:high
 ;--------------------------------------------------------------------------------
 ;		NOTE :Make sure sndcodec_used = 0x1,i2s_used = 0x1
 ;         codec_used = 0x1,if register the sound card audiocodec.

@@ -875,9 +875,9 @@ charging_type = 0
 
 [leds_para]
 leds_used = 0
-；red_led = port:P@00<0><0><0><0>
-；red_led_active_low = 0
-；green_led_active_low = 0
-；blue_led =
-；blue_led_active_low = 0
+;red_led = port:P@00<0><0><0><0>
+;red_led_active_low = 0
+;green_led_active_low = 0
+;blue_led =
+;blue_led_active_low = 0
 

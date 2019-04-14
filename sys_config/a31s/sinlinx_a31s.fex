@@ -1,7 +1,7 @@
 ;A31 PAD application
 ;---------------------------------------------------------------------------------------------------------
-; 说明： 脚本中的字符串区分大小写，用户可以修改"="后面的数值，但是不要修改前面的字符串
-; 描述gpio的形式：Port:端口+组内序号<功能分配><内部电阻状态><驱动能力><输出电平状态>
+; Explanation: The string in the script is case sensitive. The user can modify the value after "=", but do not modify the previous string.
+;  Describe the form of gpio: Port: Port + Group No. <Function Allocation> <Internal Resistor Status> <Drive Capability> <Output Level Status>
 ;---------------------------------------------------------------------------------------------------------
 
 [product]
@@ -164,7 +164,7 @@ wakeup_src0			=	port:PL5<2><1><default><default>
 ;------------------------------------------------------------------------------;
 ; 10/100/100Mbps Ethernet MAC Controller Configure                             ;
 ;------------------------------------------------------------------------------;
-;   配置选项：                                                                 ;
+;   Configuration options:                                                                 ;
 ;   gmac_used  ---  1: gmac used, 0: not used                                  ;
 ;------------------------------------------------------------------------------;
 ;         MII  GMII  RGMII        MII  GMII  RGMII        MII  GMII  RGMII     ;
@@ -894,19 +894,19 @@ smc_sda             =
 
 
 ;--------------------------------
-;[usbc0]：控制器0的配置。
-;usb_used：USB使能标志。置1，表示系统中USB模块可用,置0,则表示系统USB禁用。
-;usb_port_type：USB端口的使用情况。 0：device only;1：host only;2：OTG
-;usb_detect_type：USB端口的检查方式。0：不做检测;1：vbus/id检查;2：id/dpdm检查
-;usb_id_gpio：USB ID pin脚配置。具体请参考gpio配置说明。
-;usb_det_vbus_gpio：USB DET_VBUS pin脚配置。具体请参考gpio配置说明。
-;usb_drv_vbus_gpio：USB DRY_VBUS pin脚配置。具体请参考gpio配置说明。
-;usb_det_vbus_gpio: "axp_ctrl",表示axp 提供
-;usb_restrict_gpio  usb限流控制pin
-;usb_restric_flag:  usb限流标置
+;[usbc0]:Configuration of controller 0.
+;usb_used:USB enable flag. Set to 1, indicating that the USB module is available in the system. If set to 0, the system USB is disabled.
+;usb_port_type:Usage of the USB port. 0:device only;1:host only;2:OTG
+;usb_detect_type:The way to check the USB port. 0: no test; 1: vbus/id check; 2: id/dpdm check
+;usb_id_gpio:USB ID pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_det_vbus_gpio:USB DET_VBUS pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_drv_vbus_gpio:USB DRY_VBUS pin configuration. Please refer to the gpio configuration instructions for details.
+;usb_det_vbus_gpio: "axp_ctrl", indicating that axp provides
+;usb_restrict_gpio  usb current limit control pin
+;usb_restric_flag:  usb current limit flag
 ;--------------------------------
 ;--------------------------------
-;---       USB0控制标志
+;---       USB0 Control sign
 ;--------------------------------
 [usbc0]
 usb_used            = 1
@@ -921,7 +921,7 @@ usb_restric_flag    = 0
 usb_restric_voltage = 3550000
 usb_restric_capacity= 5
 ;--------------------------------
-;---       USB1控制标志
+;---       USB1 Control sign
 ;--------------------------------
 [usbc1]
 usb_used            = 1
@@ -935,7 +935,7 @@ usb_host_init_state = 1
 usb_restric_flag    = 0
 
 ;--------------------------------
-;---       USB2控制标志
+;---       USB2 Control sign
 ;--------------------------------
 [usbc2]
 usb_used            = 1
@@ -1250,14 +1250,14 @@ ir_power_key_code   = 0x0
 ;pmu_used                    ---0:not used,1:used
 ;pmu_twi_addr                ---slave address
 ;pmu_twi_id                  ---i2c bus number (0 TWI0, 1 TWI2, 2 TWI3)
-;pmu_irq_id		     ---irq number (0 irq0,1 irq1,……)
+;pmu_irq_id		     ---irq number (0 irq0,1 irq1,...)
 ;pmu_battery_rdc             ---battery initial resistance
 ;pmu_battery_cap             ---battery capability,mAh
 ;pmu_batdeten		     ---battery detect en;0:disable 1:enable
-;pmu_runtime_chgcur          ---set initial charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_earlysuspend_chgcur     ---set earlysuspend charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_suspend_chgcur          ---set suspend charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
-;pmu_shutdown_chgcur         ---set shutdown charging current limite,mA，300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_runtime_chgcur          ---set initial charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_earlysuspend_chgcur     ---set earlysuspend charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_suspend_chgcur          ---set suspend charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
+;pmu_shutdown_chgcur         ---set shutdown charging current limite,mA,300/450/600/750/900/1050/1200/1350/1500/1650/1800/1950/
 ;pmu_init_chgvol             ---set initial charing target voltage,mV,4100/4220/4200/4240
 ;pmu_init_chgend_rate        ---set initial charing end current  rate,10/15
 ;pmu_init_chg_enabled        ---set initial charing enabled,0:disable,1:enable
@@ -1299,8 +1299,8 @@ ir_power_key_code   = 0x0
 ;pmu_bat_para30              ---battery indication at 4.12V
 ;pmu_bat_para31              ---battery indication at 4.14V
 ;pmu_bat_para32              ---battery indication at 4.15V
-;pmu_usbvol_limit            ---set usb-ac limited voltage enable,1:enable，0：disable
-;pmu_usbcur_limit            ---set usb-ac limited current enable,1:enable，0：disable
+;pmu_usbvol_limit            ---set usb-ac limited voltage enable,1:enable,0:disable
+;pmu_usbcur_limit            ---set usb-ac limited current enable,1:enable,0:disable
 ;pmu_usbvol                  ---set usb-ac limited voltage level,mV,4000/4100/4200/4300/4400/4500/4600/4700,0 - not limite
 ;pmu_usbcur                  ---set usb-ac limited current level,mA,500/900, 0 - not limite
 ;pmu_usbvol_pc	             ---set usb-pc limited voltage level,mV,4000/4100/4200/4300/4400/4500/4600/4700,0 - not limite
@@ -1317,8 +1317,8 @@ ir_power_key_code   = 0x0
 ;pmu_battery_warning_level2  ---low power warning low level,0%-15%,1%/step
 ;pmu_restvol_time            ---battery indicaton reflash time,30/60/120/
 ;pmu_ocv_cou_adjust_time     ---ocv battery indication reflash time,60/120/30
-;pmu_chgled_func             ---CHGKED pin control，0:controlled by pmu,1:controlled by Charger
-;pmu_chgled_type             ---CHGLED Type select when pmu_chgled_func=0,0:Type A，1：Type B
+;pmu_chgled_func             ---CHGKED pin control,0:controlled by pmu,1:controlled by Charger
+;pmu_chgled_type             ---CHGLED Type select when pmu_chgled_func=0,0:Type A,1:Type B
 ;pmu_vbusen_func	     ---N_VBUSEN function select,0:as an output,1:as an input
 ;pmu_reset                   ---when power key press longer than 16's,PMU reset or not.0:not reset 1:reset
 ;pmu_IRQ_wakeup		     ---press IRQ wakeup or not when sleep or power down.0:not wakeup 1:wakeup
